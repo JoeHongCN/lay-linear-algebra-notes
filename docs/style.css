@@ -1,4 +1,4 @@
-/* 正式样式：论文风（latex 路数）
+﻿/* 正式样式：论文风（latex 路数）
    排版决定：拉丁字母一律 Times New Roman，中文走宋体；加粗砖红、斜体墨绿。
    代码与公式不在此列——公式由 MathJax 自带字体渲染，代码仍用等宽字体。 */
 :root {
@@ -7,9 +7,11 @@
   --bg: #fffff8;
   --soft: #f4f4ec;
   --line: #cccccc;
-  --link: #0055aa;
+  --link: #b03030;
   --strong: #b03030;
-  --em: #0f6b5c;
+  --em: #4b5bab;
+  --mark: rgba(176, 48, 48, 0.10);
+  --mark-em: rgba(75, 91, 171, 0.10);
   --wide: 40em;
 }
 
@@ -20,9 +22,11 @@
     --bg: #16161a;
     --soft: #1f1f24;
     --line: #3a3a42;
-    --link: #79b8ff;
+    --link: #ff9a8f;
     --strong: #ff9a8f;
-    --em: #6fd0c0;
+    --em: #9fb0ff;
+    --mark: rgba(255, 154, 143, 0.14);
+    --mark-em: rgba(159, 176, 255, 0.14);
   }
 }
 
@@ -72,12 +76,40 @@ h4 { font-size: 1em; margin: 1.6em 0 0.5em; }
 
 p { margin: 0 0 1em; }
 
-strong { color: var(--strong); font-weight: 700; }
-em { color: var(--em); font-style: italic; }
+strong {
+  color: var(--strong);
+  font-weight: 700;
+  border-radius: 2px;
+  transition: background-color 0.15s;
+}
+
+strong:hover { background: var(--mark); }
+
+em {
+  color: var(--em);
+  font-style: italic;
+  border-radius: 2px;
+  transition: background-color 0.15s;
+}
+
+em:hover { background: var(--mark-em); }
 strong em, em strong { color: var(--strong); }
 
-a { color: var(--link); text-decoration: none; }
-a:hover { text-decoration: underline; }
+a {
+  color: var(--link);
+  text-decoration: underline;
+  text-decoration-color: color-mix(in srgb, var(--link) 38%, transparent);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.2em;
+  border-radius: 2px;
+  transition: background-color 0.15s, text-decoration-color 0.15s;
+}
+
+a:hover {
+  background: var(--mark);
+  text-decoration-color: currentColor;
+  text-decoration-thickness: 2px;
+}
 
 img {
   display: block;
