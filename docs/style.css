@@ -85,7 +85,7 @@ strong {
   text-decoration-line: underline;
   text-decoration-style: solid;
   text-decoration-thickness: 1px;
-  text-decoration-color: color-mix(in srgb, currentColor 55%, transparent);
+  text-decoration-color: currentColor;
   text-underline-offset: 0.2em;
   border-radius: 2px;
   transition: background-color 0.15s;
@@ -96,11 +96,13 @@ strong:hover { background: var(--mark); }
 em {
   color: var(--em);
   font-style: italic;
+  /* 中文没有真斜体，禁止浏览器硬斜；拉丁仍走 Times 的真斜体字面 */
+  font-synthesis: none;
   text-decoration-line: underline;
   text-decoration-style: dashed;
   text-decoration-thickness: 1px;
-  text-decoration-color: color-mix(in srgb, currentColor 70%, transparent);
-  text-underline-offset: 0.26em;
+  text-decoration-color: currentColor;
+  text-underline-offset: 0.2em;
   border-radius: 2px;
   transition: background-color 0.15s;
 }
