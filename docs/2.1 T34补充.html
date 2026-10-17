@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>2.1 T34补充</title>
-<link rel="stylesheet" href="style.css?v=1792251910">
+<link rel="stylesheet" href="style.css?v=1792251961">
 <script>
 MathJax = {
   tex: { inlineMath: [['\\(', '\\)']], displayMath: [['\\[', '\\]']],
@@ -30,8 +30,8 @@ MathJax = {
 </ul></aside>
 <main>
 <h1 id="21-t34补充">2.1 T34补充<a class="anchor" href="#21-t34补充">#</a></h1>
-<h2 id="目录">目录<a class="anchor" href="#目录">#</a></h2>
-<ul><li><a href="#方法一选三个线性无关的列构造分块右逆">方法一：选三个线性无关的列，构造分块右逆</a></li><li><a href="#方法二利用-aat-可逆取-dataat-1">方法二：利用 <code>AA^T</code> 可逆，取 <code>D=A^T(AA^T)^{-1}</code></a></li><li><a href="#方法三通过-qr-分解构造">方法三：通过 QR 分解构造</a></li><li>[方法四：用行变换把 <code>A</code> 化为 <code>[I3\mid 0]</code>](#方法四用行变换把-a-化为-i3mid-0)</li><li><a href="#这些方法之间的关系">这些方法之间的关系</a></li></ul>
+<div class="inpage-toc"><h2 id="目录">目录<a class="anchor" href="#目录">#</a></h2>
+<ul><li><a href="#方法一选三个线性无关的列构造分块右逆">方法一：选三个线性无关的列，构造分块右逆</a></li><li><a href="#方法二利用-aat-可逆取-dataat-1">方法二：利用 <code>AA^T</code> 可逆，取 <code>D=A^T(AA^T)^{-1}</code></a></li><li><a href="#方法三通过-qr-分解构造">方法三：通过 QR 分解构造</a></li><li>[方法四：用行变换把 <code>A</code> 化为 <code>[I3\mid 0]</code>](#方法四用行变换把-a-化为-i3mid-0)</li><li><a href="#这些方法之间的关系">这些方法之间的关系</a></li></ul></div>
 <h2 id="方法一选三个线性无关的列构造分块右逆">方法一：选三个线性无关的列，构造分块右逆<a class="anchor" href="#方法一选三个线性无关的列构造分块右逆">#</a></h2>
 <p>因为 \(A\) 的列张成 \(ℝ^3\)，所以 \(A\) 的 \(n\) 列中一定可以选出 \(3\) 个线性无关的列。假设第 \(i,j,k\) 列线性无关，令</p>
 <div class="math">\[B=\begin{bmatrix}\mathbf{a}_i&amp;\mathbf{a}_j&amp;\mathbf{a}_k\end{bmatrix}\]</div>

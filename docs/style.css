@@ -194,6 +194,8 @@ main {
     padding-top: 2.4em;
   }
   .layout.has-toc main { margin: 0; }
+  /* 有侧栏时长屏可见的目录不必再占正文 */
+  .layout.has-toc .inpage-toc { display: none; }
 }
 
 /* ---------- 正文 ---------- */
