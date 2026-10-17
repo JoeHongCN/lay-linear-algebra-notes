@@ -13,7 +13,7 @@
   --mark: rgba(176, 48, 48, 0.10);
   --mark-blue: rgba(47, 93, 138, 0.10);
   --mark-em: rgba(75, 91, 171, 0.10);
-  --wide: 52em;
+  --wide: 56em;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -41,8 +41,8 @@ body {
   color: var(--fg);
   font-family: "Times New Roman", "Source Han Serif SC", "Songti SC",
                "SimSun", serif;
-  font-size: 17px;
-  line-height: 1.75;
+  font-size: 18px;
+  line-height: 1.8;
 }
 
 nav {
@@ -71,8 +71,8 @@ h1, h2, h3, h4, h5, h6 {
   text-align: left;
 }
 
-h1 { font-size: 1.7em; text-align: center; margin: 1.6em 0 1.2em; }
-h2 { font-size: 1.25em; margin: 2.4em 0 0.8em; }
+h1 { font-size: 2em; text-align: center; margin: 1.5em 0 1.4em; letter-spacing: 0.01em; }
+h2 { font-size: 1.34em; margin: 2.6em 0 0.9em; }
 h3 { font-size: 1.08em; margin: 2em 0 0.6em; }
 h4 { font-size: 1em; margin: 1.6em 0 0.5em; }
 
@@ -130,13 +130,20 @@ img {
   display: block;
   max-width: 100%;
   height: auto;
-  margin: 1.6em auto;
+  margin: 1.8em auto;
+  padding: 6px;
+  background: color-mix(in srgb, var(--fg) 4%, transparent);
+  border: 1px solid color-mix(in srgb, var(--fg) 10%, transparent);
+  border-radius: 6px;
 }
 
 .math {
   overflow-x: auto;
-  margin: 1.6em 0;
+  margin: 1.8em 0;
+  padding: 0.9em 0.6em;
   text-align: center;
+  background: color-mix(in srgb, var(--fg) 3.5%, transparent);
+  border-radius: 6px;
 }
 
 table {
@@ -159,6 +166,7 @@ th, td {
 }
 
 th { border-bottom: 1px solid var(--fg); font-weight: 700; }
+tbody tr:hover { background: color-mix(in srgb, var(--fg) 4%, transparent); }
 
 blockquote {
   margin: 1.5em 1.6em;
