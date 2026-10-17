@@ -25,9 +25,9 @@ REF 的 *唯一性定理*，证明好像没有想象中的简单。用到了一�
 ![课本 p.64](../images/p0064-148_80_573_182.png)
 
 指出了下面四个关于$m\times n$矩阵$A$的说法等价：
-- 对于每一个在 $\mathbb{R}^{m}$ 上的 $\mathbf{b}$，矩阵方程$A\mathbf{x}=\mathbf{b}$有解
-- 每一个在 $\mathbb{R}^{m}$ 上的 $\mathbf{b}$ 都是矩阵$A$的列的线性组合
-- $A$的列张成空间$\mathbb{R}^m$
+- 对于每一个在 $ℝ^{m}$ 上的 $\mathbf{b}$，矩阵方程$A\mathbf{x}=\mathbf{b}$有解
+- 每一个在 $ℝ^{m}$ 上的 $\mathbf{b}$ 都是矩阵$A$的列的线性组合
+- $A$的列张成空间$ℝ^m$
 - $A$在每一行都有一个 *pivot position*
 #### Theorem 5
 
@@ -69,7 +69,7 @@ REF 的 *唯一性定理*，证明好像没有想象中的简单。用到了一�
 
 ![课本 p.106](../images/p0106-140_150_571_221.png)
 
-这是说满射等价于 $A$ 的列张开 $\mathbb{R}^m$，单射等价于 $A$ 的各列线性无关。
+这是说满射等价于 $A$ 的列张开 $ℝ^m$，单射等价于 $A$ 的各列线性无关。
 
 ---
 
@@ -80,7 +80,7 @@ REF 的 *唯一性定理*，证明好像没有想象中的简单。用到了一�
 - 依据 **RREF** 给出最后方程的解。
 
 #### 判断是否线性相关
-- 写出增广矩阵$\begin{bmatrix}\mathbf{a}_{1}&\mathbf{a}_{2}&\cdots&\mathbf{a}_{n}&\mathbf{0}\end{bmatrix}$
+- 写出增广矩阵$`\begin{bmatrix}\mathbf{a}_{1}&\mathbf{a}_{2}&\cdots&\mathbf{a}_{n}&\mathbf{0}\end{bmatrix}`$
 - 不含非平凡解则线性无关
 - 含非平凡解则线性相关
 
@@ -95,16 +95,16 @@ REF 的 *唯一性定理*，证明好像没有想象中的简单。用到了一�
 # 一些等价的说法
 
 #### 01
-一个线性系统有解 = 增广矩阵的最右列不是 *pivot column* = 增广矩阵的 *echelon form* 没有行是这个形式：$\begin{bmatrix}0&\cdots&0&b\end{bmatrix}$，其中 $b$ 非 0。
+一个线性系统有解 = 增广矩阵的最右列不是 *pivot column* = 增广矩阵的 *echelon form* 没有行是这个形式：$`\begin{bmatrix}0&\cdots&0&b\end{bmatrix}`$，其中 $b$ 非 0。
 #### 02
 一个线性系统有唯一解 = （有解）且无自由变量
 #### 03
 一个线性系统有无穷多解 = （有解）且有至少一个自由变量
 #### 04
-矩阵方程 $A\mathbf{x} = \mathbf{b}$  = 矢量方程 $\sum_{i=1}^{n}\mathbf{a}_{i}x_{i} = \mathbf{b}$  =  增广矩阵$\begin{bmatrix}\mathbf{a}_{1}&\mathbf{a}_{2}&\cdots&\mathbf{a}_{n}&\mathbf{b}\end{bmatrix}$  
+矩阵方程 $A\mathbf{x} = \mathbf{b}$  = 矢量方程 $\sum_{i=1}^{n}\mathbf{a}_{i}x_{i} = \mathbf{b}$  =  增广矩阵$`\begin{bmatrix}\mathbf{a}_{1}&\mathbf{a}_{2}&\cdots&\mathbf{a}_{n}&\mathbf{b}\end{bmatrix}`$  
 我们已经会求解的是增广矩阵。所以其它两个形式也可以用增广矩阵来看，进行求解。
 #### 05
- 对于每一个在 $\mathbb{R}^{m}$ 上的 $\mathbf{b}$，矩阵方程 $A\mathbf{x}=\mathbf{b}$ 有解 = 每一个在 $\mathbb{R}^{m}$ 上的 $\mathbf{b}$ 都是矩阵 $A$ 的列的线性组合 = $A$ 的列张成空间 $\mathbb{R}^m$ = $A$ 在每一行都有一个 *pivot position*.
+ 对于每一个在 $ℝ^{m}$ 上的 $\mathbf{b}$，矩阵方程 $A\mathbf{x}=\mathbf{b}$ 有解 = 每一个在 $ℝ^{m}$ 上的 $\mathbf{b}$ 都是矩阵 $A$ 的列的线性组合 = $A$ 的列张成空间 $ℝ^m$ = $A$ 在每一行都有一个 *pivot position*.
 #### 06
 $A\mathbf{x} = \mathbf{b}$ 有解 = $\mathbf{b}$ 是 $A$ 的列的线性组合 = $\mathbf{b}$ 在 Span{$\mathbf{a_{1}},\mathbf{a_{2}},\cdots,\mathbf{a_{n}}$}
 #### 07
@@ -116,7 +116,7 @@ $A\mathbf{x} = \mathbf{0}$ 有非平凡解 = 方程含有至少一个自由变�
 #### 09
 单射 **等价于** $T(\mathbf{x}) = \mathbf{0}$ 只有平凡解 **等价于** $A(\mathbf{x}) = 0$ 不含有自由变量**等价于**$A$ 的各列线性无关。
 #### 10
-满射**等价于** $A$ 的列张开 $\mathbb{R}^m$**等价于**对于每一个在 $\mathbb{R}^{m}$ 上的 $\mathbf{b}$，矩阵方程 $A\mathbf{x}=\mathbf{b}$ 有解**等价于**每一个在 $\mathbb{R}^{m}$ 上的 $\mathbf{b}$ 都是矩阵 $A$ 的列的线性组合 **等价于** $A$ 在每一行都有一个 *pivot position*.[Chapter 01 Summary#05](Chapter%2001%20Summary.md#05)
+满射**等价于** $A$ 的列张开 $ℝ^m$**等价于**对于每一个在 $ℝ^{m}$ 上的 $\mathbf{b}$，矩阵方程 $A\mathbf{x}=\mathbf{b}$ 有解**等价于**每一个在 $ℝ^{m}$ 上的 $\mathbf{b}$ 都是矩阵 $A$ 的列的线性组合 **等价于** $A$ 在每一行都有一个 *pivot position*.[Chapter 01 Summary#05](Chapter%2001%20Summary.md#05)
 
 ---
 # 单箭头
