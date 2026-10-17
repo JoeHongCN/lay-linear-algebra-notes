@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>2.5 Matrix Factorizations</title>
-<link rel="stylesheet" href="../style.css?v=1792251423">
+<link rel="stylesheet" href="../style.css?v=1792251704">
 <script>
 MathJax = {
   tex: { inlineMath: [['\\(', '\\)']], displayMath: [['\\[', '\\]']],
@@ -17,7 +17,7 @@ MathJax = {
 <body>
 <div id="progress"></div>
 <nav>
-  <a href="../index.html">← 线性代数笔记</a>
+  <div class="crumbs"><a href="../index.html">← 线性代数笔记</a> <span class="sep">›</span> 第二章</div>
   <button id="theme" title="切换深浅色" aria-label="切换深浅色">◐</button>
 </nav>
 <div class="layout has-toc">
@@ -64,6 +64,7 @@ L &amp; =(E_{p}\cdots E_{1})^{-1}
 <p>这一块的内容其实就是一个抽象过程。也就是 <em>input-&gt;transfer-&gt;output</em> 的一个过程。这里以电路为例子。给出了串联和并联的 <em>transfer matrix</em>。<br>仍然说一下我们为什么会引入这样一个矩阵。我们基于这样一个考量：很多时候，输出和输入之间的关系是线性的，于是我们可以用一个矩阵来描述。这个矩阵就被我们称为转移矩阵（ <em>transfer matrix</em> ）。</p>
 <p><img src="../images/p0162-223_238_576_475.png" alt="课本 p.162"></p>
 <p>这是很显然的串联和并联电路的转移矩阵。算例比较没意思这里就不贴了。这里重要的还是这个输入-输出的思想。为了建立一个可用的，具有一定性质的网络，工程师们首先判断这个网络是否可以被建造出来，然后他尝试把这个转化矩阵拆成几个矩阵的乘积，这些矩阵可能对应一些小的电路，它们可能已经被制造出来，可以被安装了。在常见的交流电情况中，转移矩阵的元素通常是有理复值函数。（参见 2.4 节的练习 21 和 22。）一个标准问题是寻找使用最少电气元件的最小实现方案。</p>
+<p class="back"><a href="../index.html">↑ 返回目录</a></p>
 </main>
 </div>
 <button id="top" title="回到顶部" aria-label="回到顶部">↑</button>

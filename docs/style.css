@@ -108,6 +108,9 @@ nav {
   font-size: 0.9em;
 }
 
+.crumbs { display: flex; align-items: center; gap: 0.35em; }
+.crumbs .sep { color: var(--line); }
+
 nav a { color: var(--muted); text-decoration: none; transition: color 0.15s; }
 nav a:hover { color: var(--link); background: none; }
 
@@ -434,6 +437,17 @@ hr {
   margin: 3em auto;
   border-top: 1px solid var(--line);
 }
+
+.back {
+  margin: 3.5em 0 0;
+  padding-top: 1.4em;
+  border-top: 1px solid var(--line);
+  text-align: center;
+  font-size: 0.9em;
+}
+
+.back a { color: var(--muted); }
+.back a:hover { color: var(--link); background: none; }
 
 /* ---------- 回到顶部 ---------- */
 

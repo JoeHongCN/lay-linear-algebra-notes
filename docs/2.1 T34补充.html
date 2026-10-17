@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>2.1 T34补充</title>
-<link rel="stylesheet" href="style.css?v=1792251423">
+<link rel="stylesheet" href="style.css?v=1792251704">
 <script>
 MathJax = {
   tex: { inlineMath: [['\\(', '\\)']], displayMath: [['\\[', '\\]']],
@@ -17,7 +17,7 @@ MathJax = {
 <body>
 <div id="progress"></div>
 <nav>
-  <a href="index.html">← 线性代数笔记</a>
+  <div class="crumbs"><a href="index.html">← 线性代数笔记</a></div>
   <button id="theme" title="切换深浅色" aria-label="切换深浅色">◐</button>
 </nav>
 <div class="layout has-toc">
@@ -78,6 +78,7 @@ B^{-1}&amp;\text{放在第 }i,j,k\text{ 行}\\
 <ul><li>你的方法（解 \(A\mathbf{x}=\mathbf{e}_i\)）是最直接的，等价于逐列求右逆。</li><li>方法一本质上是“选主元列”，然后用分块矩阵求逆。</li><li>方法二和方法三都利用了 \(A\) 行满秩的性质，分别通过 Gram 矩阵和 QR 分解来构造右逆。</li><li>方法四则是从行变换的角度出发。</li></ul>
 <p>它们给出的 \(D\) 可能不同，因为右逆一般不唯一（当 \(n>3\) 时，\(A\) 有无穷多个右逆）。但只要满足 \(AD=I_3\)，就都是合法的构造。</p>
 <p>所以，除了你提到的方法，至少还有“选主元列分块求逆”、“\(A^T(AA^T)^{-1}\)”、“QR 分解”、“行变换法”等思路。你可以根据具体问题选择最方便的一种。</p>
+<p class="back"><a href="index.html">↑ 返回目录</a></p>
 </main>
 </div>
 <button id="top" title="回到顶部" aria-label="回到顶部">↑</button>

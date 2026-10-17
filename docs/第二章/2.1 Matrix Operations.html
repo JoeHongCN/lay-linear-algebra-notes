@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>2.1 Matrix Operations</title>
-<link rel="stylesheet" href="../style.css?v=1792251423">
+<link rel="stylesheet" href="../style.css?v=1792251704">
 <script>
 MathJax = {
   tex: { inlineMath: [['\\(', '\\)']], displayMath: [['\\[', '\\]']],
@@ -17,7 +17,7 @@ MathJax = {
 <body>
 <div id="progress"></div>
 <nav>
-  <a href="../index.html">← 线性代数笔记</a>
+  <div class="crumbs"><a href="../index.html">← 线性代数笔记</a> <span class="sep">›</span> 第二章</div>
   <button id="theme" title="切换深浅色" aria-label="切换深浅色">◐</button>
 </nav>
 <div class="layout has-toc">
@@ -89,6 +89,7 @@ A\mathbf{b_{1}} &amp; A\mathbf{b_{2}}&amp;\cdots&amp;A\mathbf{b}_{p}
 <p><strong>3. 比较元素</strong><br>令 \(A E_{ij} = E_{ij} A\)，比较两边矩阵的元素：</p>
 <ul><li>当 \(k \neq i\) 且 \(l = j\) 时，左边元素为 \(a_{ki}\)，右边元素为 0。因此 \(a_{ki} = 0\)。由于 \(i\) 和 \(k\) 是任意不相等的行号，这说明 \(A\) 的所有非对角线元素均为 0，即 \(A\) 是对角矩阵。</li><li>当 \(k = i\) 且 \(l = j\) 时，左边元素为 \(a_{ii}\)，右边元素为 \(a_{jj}\)。因此 \(a_{ii} = a_{jj}\)。由于 \(i\) 和 \(j\) 是任意行号和列号，这说明 \(A\) 的所有对角线元素均相等。</li></ul>
 <p>综合以上两点，\(A\) 的对角线元素全相等，非对角线元素全为 0，因此 \(A\) 是数量矩阵。</p>
+<p class="back"><a href="../index.html">↑ 返回目录</a></p>
 </main>
 </div>
 <button id="top" title="回到顶部" aria-label="回到顶部">↑</button>
