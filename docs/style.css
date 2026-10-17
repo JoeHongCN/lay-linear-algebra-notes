@@ -7,10 +7,11 @@
   --bg: #fffff8;
   --soft: #f4f4ec;
   --line: #cccccc;
-  --link: #b03030;
+  --link: #2f5d8a;
   --strong: #b03030;
   --em: #4b5bab;
   --mark: rgba(176, 48, 48, 0.10);
+  --mark-blue: rgba(47, 93, 138, 0.10);
   --mark-em: rgba(75, 91, 171, 0.10);
   --wide: 40em;
 }
@@ -22,10 +23,11 @@
     --bg: #16161a;
     --soft: #1f1f24;
     --line: #3a3a42;
-    --link: #ff9a8f;
+    --link: #8fb8de;
     --strong: #ff9a8f;
     --em: #9fb0ff;
     --mark: rgba(255, 154, 143, 0.14);
+    --mark-blue: rgba(143, 184, 222, 0.14);
     --mark-em: rgba(159, 176, 255, 0.14);
   }
 }
@@ -76,9 +78,15 @@ h4 { font-size: 1em; margin: 1.6em 0 0.5em; }
 
 p { margin: 0 0 1em; }
 
+/* 加粗：实线细下划线；斜体：短横虚线（不是点线），两者都带颜色 */
 strong {
   color: var(--strong);
   font-weight: 700;
+  text-decoration-line: underline;
+  text-decoration-style: solid;
+  text-decoration-thickness: 1px;
+  text-decoration-color: color-mix(in srgb, currentColor 55%, transparent);
+  text-underline-offset: 0.2em;
   border-radius: 2px;
   transition: background-color 0.15s;
 }
@@ -88,6 +96,11 @@ strong:hover { background: var(--mark); }
 em {
   color: var(--em);
   font-style: italic;
+  text-decoration-line: underline;
+  text-decoration-style: dashed;
+  text-decoration-thickness: 1px;
+  text-decoration-color: color-mix(in srgb, currentColor 70%, transparent);
+  text-underline-offset: 0.26em;
   border-radius: 2px;
   transition: background-color 0.15s;
 }
@@ -95,21 +108,15 @@ em {
 em:hover { background: var(--mark-em); }
 strong em, em strong { color: var(--strong); }
 
+/* 链接：不下划线，靠颜色 + 悬停底色辨认 */
 a {
   color: var(--link);
-  text-decoration: underline;
-  text-decoration-color: color-mix(in srgb, var(--link) 38%, transparent);
-  text-decoration-thickness: 1px;
-  text-underline-offset: 0.2em;
+  text-decoration: none;
   border-radius: 2px;
-  transition: background-color 0.15s, text-decoration-color 0.15s;
+  transition: background-color 0.15s;
 }
 
-a:hover {
-  background: var(--mark);
-  text-decoration-color: currentColor;
-  text-decoration-thickness: 2px;
-}
+a:hover { background: var(--mark-blue); }
 
 img {
   display: block;
