@@ -1,4 +1,4 @@
-/* 线代笔记文档站样式
+﻿/* 线代笔记文档站样式
    排版：拉丁字母 Times New Roman，中文宋体；加粗砖红 + 实线，斜体蓝紫 + 短横虚线。
    布局：宽屏左侧常驻目录，正文是一张「纸」，顶部阅读进度条，右下回到顶部。 */
 
@@ -208,6 +208,7 @@ h4 { font-size: 1em; margin: 1.6em 0 0.5em; }
   transition: opacity 0.15s, color 0.15s;
 }
 
+h1 .anchor { display: none; }
 h2:hover .anchor, h3:hover .anchor { opacity: 0.75; }
 .anchor:hover { color: var(--link); background: none; }
 
