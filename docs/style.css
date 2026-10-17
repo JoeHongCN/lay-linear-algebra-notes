@@ -108,6 +108,12 @@ em {
 }
 
 em:hover { background: var(--mark-em); }
+
+/* 含中文的斜体不倾斜：中文没有真斜体，合成斜体笔画会互相挤压 */
+em.cjk {
+  font-style: normal;
+  text-decoration-color: color-mix(in srgb, currentColor 80%, transparent);
+}
 strong em, em strong { color: var(--strong); }
 
 /* 链接：不下划线，靠颜色 + 悬停底色辨认 */

@@ -18,9 +18,9 @@ MathJax = {
 <nav><a href="../index.html">← 线性代数笔记</a></nav>
 <main>
 <h1 id="线性变换的介绍">线性变换的介绍</h1>
-<p>矩阵方程和与之相关的向量方程之间的差距只是一个 <em>记号</em> 上的差距。但是，一个在线性代数中的矩阵方程可以与向量的线性组合没有直接联系。这发生在我们把矩阵当作一个 <strong>算符</strong> 的时候。<br>也就是说，我们本来有一个向量 \(\vec{x}\)，\(A \vec{x}=\vec{b}\) 意味着我们把原来的向量 \(\vec{x}\) 通过算符 \(A\) 变成了向量 \(\vec{b}\)。<br>这是 <strong>映射</strong> 的感觉。我们把一个 \(ℝ^4\) 的向量空间映射到了 \(ℝ^2\) 上。更确切的说，这是 <strong>函数</strong> 的感觉，因为对于每一个确定的 \(\vec{x}\)，有且只有一个 \(\vec{b}\) 与其对应。这很美妙，不是吗？<br>下面这个图形象地说明了这种感觉：</p>
+<p>矩阵方程和与之相关的向量方程之间的差距只是一个 <em class="cjk">记号</em> 上的差距。但是，一个在线性代数中的矩阵方程可以与向量的线性组合没有直接联系。这发生在我们把矩阵当作一个 <strong>算符</strong> 的时候。<br>也就是说，我们本来有一个向量 \(\vec{x}\)，\(A \vec{x}=\vec{b}\) 意味着我们把原来的向量 \(\vec{x}\) 通过算符 \(A\) 变成了向量 \(\vec{b}\)。<br>这是 <strong>映射</strong> 的感觉。我们把一个 \(ℝ^4\) 的向量空间映射到了 \(ℝ^2\) 上。更确切的说，这是 <strong>函数</strong> 的感觉，因为对于每一个确定的 \(\vec{x}\)，有且只有一个 \(\vec{b}\) 与其对应。这很美妙，不是吗？<br>下面这个图形象地说明了这种感觉：</p>
 <p><img src="../../images/p0092-298_179_485_313.png" alt="课本 p.92"></p>
-<p>下面是一个定义：<br>一个从 \(ℝ^n\) 到 \(\mathbb{R^m}\) 的 <strong>变换</strong> \(\mathit{T}\) 是指一个从 \(ℝ^n\) 到 \(\mathbb{R^m}\) 的映射，\(ℝ^n\) 被称作 \(\mathit{T}\) 的 <strong>定义域</strong> ，\(\mathbb{R^m}\) 被称为 \(\mathit{T}\) 的 <em>陪域</em> 。记为 \(\mathit{T}:ℝ^n\toℝ^m\)。<br>对于任意的 \(\vec{x}\inℝ^n\)，我们把 \(\mathit{T}(\vec{x})\inℝ^m\) 称作 \(\vec{x}\) 的 <em>像</em>，把像集称为 \(\mathit{T}\) 的 <strong>值域</strong></p>
+<p>下面是一个定义：<br>一个从 \(ℝ^n\) 到 \(\mathbb{R^m}\) 的 <strong>变换</strong> \(\mathit{T}\) 是指一个从 \(ℝ^n\) 到 \(\mathbb{R^m}\) 的映射，\(ℝ^n\) 被称作 \(\mathit{T}\) 的 <strong>定义域</strong> ，\(\mathbb{R^m}\) 被称为 \(\mathit{T}\) 的 <em class="cjk">陪域</em> 。记为 \(\mathit{T}:ℝ^n\toℝ^m\)。<br>对于任意的 \(\vec{x}\inℝ^n\)，我们把 \(\mathit{T}(\vec{x})\inℝ^m\) 称作 \(\vec{x}\) 的 <em class="cjk">像</em>，把像集称为 \(\mathit{T}\) 的 <strong>值域</strong></p>
 <h2 id="矩阵变换">矩阵变换</h2>
 <p>我们有时会简记矩阵变换为这个形式：</p>
 <div class="math">\[\vec{x}\mapsto A\vec{x}\]</div>
@@ -28,7 +28,7 @@ MathJax = {
 <p><img src="../../images/p0093-172_198_528_362.png" alt="课本 p.93"></p>
 <p>第一个问题就是在简单地做矩阵乘法<br>第二个问题就是在找解<br>第三个问题在问解的唯一性，也就是我们在 <a href="1.5%20Solution%20Sets%20of%20Linear%20Systems.html#solutions-of-nonhomogeneous-systems非齐次线性方程的解">1.5</a> 中讨论过的问题。<br>第四个问题是是否有解，这是一个 consistent 的判定，也可以用 <a href="1.5%20Solution%20Sets%20of%20Linear%20Systems.html#solutions-of-nonhomogeneous-systems非齐次线性方程的解">1.5</a> 的方法解决。<br>Example 2 是一个很有意思的矩阵，它把一个三维空间上的点投影到了\(x_1x_2-\)平面</p>
 <p><img src="../../images/p0094-222_232_573_351.png" alt="课本 p.94"></p>
-<p>这启发我们：可能不止 <em>投影</em> 这个几何操作对应着一个矩阵——所有的几何操作可能都对应着一个矩阵。<br>Example 3 的矩阵更有意思了，它被称作一个 <em>shear transformation</em>，它只拉伸图形的形状，但不改变它的面积/体积。<br>书上没有展开说这件事，我们可以自己研究一下它需要满足什么要求。<br>以二维为例。首先很显然的是，对于任意一个 \(2\times 2\) 的矩阵，它一般总能把一个线段映成另一条线段。因为：我们不妨设原先线段的两端点是 \((x_{1},y_{1}),(x_{2},y_{2})\)，设矩阵为：</p>
+<p>这启发我们：可能不止 <em class="cjk">投影</em> 这个几何操作对应着一个矩阵——所有的几何操作可能都对应着一个矩阵。<br>Example 3 的矩阵更有意思了，它被称作一个 <em>shear transformation</em>，它只拉伸图形的形状，但不改变它的面积/体积。<br>书上没有展开说这件事，我们可以自己研究一下它需要满足什么要求。<br>以二维为例。首先很显然的是，对于任意一个 \(2\times 2\) 的矩阵，它一般总能把一个线段映成另一条线段。因为：我们不妨设原先线段的两端点是 \((x_{1},y_{1}),(x_{2},y_{2})\)，设矩阵为：</p>
 <div class="math">\[A=\begin{bmatrix}
 a_{11}  &amp;a_{12} \\
 a_{21}  &amp;a_{22}
@@ -62,7 +62,7 @@ a_{21}dx+a_{22}dy
 1 &amp; \alpha \\
 \beta &amp; 1
 \end{bmatrix}\]</div>
-<p>这并不能保证面积守恒，所以并不属于剪切变换。<em>只有当 \(\alpha\beta<<1\)才能这么做</em>。</p>
+<p>这并不能保证面积守恒，所以并不属于剪切变换。<em class="cjk">只有当 \(\alpha\beta<<1\)才能这么做</em>。</p>
 <h2 id="线性变换">线性变换</h2>
 <p><a href="Chapter%2001%20Summary.html#theorem-5">Theorem 05</a> 告诉我们矩阵和向量的乘法是满足分配律的，以及乘法中常数的位置是无关紧要的。<br>这引出了一个很重要的定义：<strong>线性</strong>。</p>
 <p><img src="../../images/p0095-96_418_528_491.png" alt="课本 p.95"></p>

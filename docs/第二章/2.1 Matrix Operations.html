@@ -18,7 +18,7 @@ MathJax = {
 <nav><a href="../index.html">← 线性代数笔记</a></nav>
 <main>
 <h1 id="21-matrix-operations">2.1 Matrix Operations</h1>
-<p>我们第一个要说的是如何 <em>定位</em> 一个矩阵内的元素。对于一个 \(m \times n\) 的矩阵 \(A\)，我们会记它第 \(i\) 行第 \(j\) 列的元素为 \(a_{ij}\)，或者是(i, j)-entry of A。比如说第三行第二列的元素 \(a_{32}\)。<br>A 的每一列都是一个由 \(m\) 个实数组成的列表，可以表示一个 \(ℝ^m\) 的向量。一般来说这些向量都会被记为 \(\mathbf{a_{1},a_{2},\cdots,a_{n}}\)，所以矩阵 \(A\) 就可以被写为：</p>
+<p>我们第一个要说的是如何 <em class="cjk">定位</em> 一个矩阵内的元素。对于一个 \(m \times n\) 的矩阵 \(A\)，我们会记它第 \(i\) 行第 \(j\) 列的元素为 \(a_{ij}\)，或者是(i, j)-entry of A。比如说第三行第二列的元素 \(a_{32}\)。<br>A 的每一列都是一个由 \(m\) 个实数组成的列表，可以表示一个 \(ℝ^m\) 的向量。一般来说这些向量都会被记为 \(\mathbf{a_{1},a_{2},\cdots,a_{n}}\)，所以矩阵 \(A\) 就可以被写为：</p>
 <div class="math">\[A = \begin{bmatrix}
 \mathbf{a_{1}}&amp;\mathbf{a_{2}}&amp;\cdots&amp;\mathbf{a_{n}}
 \end{bmatrix}\]</div>
@@ -45,11 +45,11 @@ A\mathbf{b_{1}} &amp; A\mathbf{b_{2}}&amp;\cdots&amp;A\mathbf{b}_{p}
 <p>下面是这些矩阵运算的性质。我把加法、数乘的和矩阵乘法的放在一块。</p>
 <p><img src="../../images/p0124-150_65_571_138.png" alt="课本 p.124"></p>
 <p><img src="../../images/p0128-148_128_571_271.png" alt="课本 p.128"></p>
-<p>对于 <a href="../../images/p0124-150_65_571_138.png">Theorem 1</a>，我们也可以像 <a href="../../images/p0128-148_128_571_271.png">Theorem 2</a> 一样给出定律名。a, b, c 反映的是矩阵加法的交换律，结合律和单位元，d,e, f 反映的是数乘的分配律和结合律。当然，交换律也没有什么不成立的理由。<em>标量</em> 毕竟拥有着最低的地位。这在 <a href="../../images/p0128-148_128_571_271.png">Theorem 2</a> 的 d 看得更清楚一些。只不过我们确实很少说 \(Ar\)，这样看起来像是把一个矩阵作用在一个标量上，确实不大合规，但是其实又不大影响理解。 <strong>但是果然我们还是不要这么写为好。</strong></p>
+<p>对于 <a href="../../images/p0124-150_65_571_138.png">Theorem 1</a>，我们也可以像 <a href="../../images/p0128-148_128_571_271.png">Theorem 2</a> 一样给出定律名。a, b, c 反映的是矩阵加法的交换律，结合律和单位元，d,e, f 反映的是数乘的分配律和结合律。当然，交换律也没有什么不成立的理由。<em class="cjk">标量</em> 毕竟拥有着最低的地位。这在 <a href="../../images/p0128-148_128_571_271.png">Theorem 2</a> 的 d 看得更清楚一些。只不过我们确实很少说 \(Ar\)，这样看起来像是把一个矩阵作用在一个标量上，确实不大合规，但是其实又不大影响理解。 <strong>但是果然我们还是不要这么写为好。</strong></p>
 <p>书上给出了一个为什么 \(AB\ne BA\) 的说法，我觉得挺对的：因为 \(AB\) 反映了一个 A 各列的线性组合，\(BA\) 反映的则是 B 各列的线性组合。这说明了为什么即使 A、B 都是方阵，它们都有定义，一般而言仍然不相等。<br>所以在矩阵乘法中，\(AB=BA\) 是一个很反常的事，反常到如果它真的成立，应该会有不少性质。我们给这个性质命名为 <strong>可对易性</strong>，或者是 <strong>可交换性</strong> ( <em>A and B commute with one another</em> )</p>
 <p>书上给出了 3 个 warning，来告诉我们矩阵代数和实数代数的不同。</p>
 <p><img src="../../images/p0129-179_119_506_199.png" alt="课本 p.129"></p>
-<ol><li>一般地，\(AB \neq BA\)。</li><li><em>消去律</em>对矩阵乘法<strong>不</strong>成立。也就是说，如果 \(AB = AC\)，一般情况下<strong>不能</strong>推出 \(B = C\)。（见习题 10。） <strong>这一点对 \(AB=AC=I\) 甚至都不一定成立，除非 A 是方阵</strong></li><li>如果乘积 \(AB\) 是零矩阵，一般情况下你<strong>不能</strong>断定 \(A = 0\) 或 \(B = 0\) 中至少有一个成立。（见习题 12。）</li></ol>
+<ol><li>一般地，\(AB \neq BA\)。</li><li><em class="cjk">消去律</em>对矩阵乘法<strong>不</strong>成立。也就是说，如果 \(AB = AC\)，一般情况下<strong>不能</strong>推出 \(B = C\)。（见习题 10。） <strong>这一点对 \(AB=AC=I\) 甚至都不一定成立，除非 A 是方阵</strong></li><li>如果乘积 \(AB\) 是零矩阵，一般情况下你<strong>不能</strong>断定 \(A = 0\) 或 \(B = 0\) 中至少有一个成立。（见习题 12。）</li></ol>
 <h3 id="矩阵的幂">矩阵的幂</h3>
 <p>如果 A 是一个 \(n\times n\) 的方阵，\(k\) 是一个非负整数，那么 \(A^k\) 表示连乘 \(k\) 次 \(A\)。即：</p>
 <div class="math">\[A^k = \underbrace{A\cdots A}_{k}\]</div>

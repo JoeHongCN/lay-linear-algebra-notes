@@ -68,7 +68,7 @@ MathJax = {
 <hr>
 <p><strong>Q7. 求逆算法 \([A\mid I]\to[I\mid A^{-1}]\)，为什么"同样的行变换"作用在两块上就自动给出了答案？</strong></p>
 <p>（出处：2.2 第 77-81 行）</p>
-<p>你的笔记给了证明，但证明里有一步是"显然"的：<em>如果 \(A\sim I_n\)，那么存在初等矩阵乘积 \(E_k\cdots E_1A=I_n\)，于是 \(A^{-1}=E_k\cdots E_1\)。然后作用在 \(I_n\) 上就得到逆。</em></p>
+<p>你的笔记给了证明，但证明里有一步是"显然"的：<em class="cjk">如果 \(A\sim I_n\)，那么存在初等矩阵乘积 \(E_k\cdots E_1A=I_n\)，于是 \(A^{-1}=E_k\cdots E_1\)。然后作用在 \(I_n\) 上就得到逆。</em></p>
 <p>这里的关键其实是<strong>分块</strong>：</p>
 <div class="math">\[E_k\cdots E_1\,[\,A\mid I\,] = [\,E_k\cdots E_1 A \mid E_k\cdots E_1 I\,] = [\,I\mid A^{-1}\,]\]</div>
 <p>也就是说，这个算法成立的真正原因是<strong>矩阵乘法可以按列块分配</strong>——而这一点在 2.1 你已经证过了（\(AB\) 的第 \(j\) 列 \(=A\mathbf{b}_j\)）。</p>
