@@ -65,4 +65,17 @@
   }
 
   update();
+
+  // 图片与公式是跳转之后才渲染完的，会把目标标题往下顶，
+  // 所以等页面完全加载后再校正一次锚点位置。
+  function realign() {
+    if (!location.hash) return;
+    var el = document.getElementById(decodeURIComponent(location.hash.slice(1)));
+    if (el) el.scrollIntoView({ block: 'start' });
+    update();
+  }
+  addEventListener('load', function () { setTimeout(realign, 120); });
+  if (document.fonts && document.fonts.ready) {
+    document.fonts.ready.then(function () { setTimeout(realign, 60); });
+  }
 })();

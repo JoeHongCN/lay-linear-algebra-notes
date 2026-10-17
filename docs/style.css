@@ -180,7 +180,7 @@ main {
     overflow-y: auto;
     padding-top: 2.4em;
   }
-  main { margin: 0; }
+  .layout.has-toc main { margin: 0; }
 }
 
 /* ---------- 正文 ---------- */
