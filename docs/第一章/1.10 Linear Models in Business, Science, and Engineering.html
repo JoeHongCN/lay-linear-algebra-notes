@@ -15,9 +15,15 @@ MathJax = {
 <script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </head>
 <body>
-<nav><a href="../index.html">← 线性代数笔记</a></nav>
+<div id="progress"></div>
+<nav>
+  <a href="../index.html">← 线性代数笔记</a>
+  <button id="theme" title="切换深浅色" aria-label="切换深浅色">◐</button>
+</nav>
+<div class="layout">
+
 <main>
-<h1 id="110-linear-models-in-business-science-and-engineering">1.10 Linear Models in Business, Science, and Engineering</h1>
+<h1 id="110-linear-models-in-business-science-and-engineering">1.10 Linear Models in Business, Science, and Engineering<a class="anchor" href="#110-linear-models-in-business-science-and-engineering">#</a></h1>
 <p>这里我们将介绍三个模型。<br>第一个是一个有关营养的问题。它将成为我们线性规划（ <em>Linear programming problems</em> ）解决方法的一个代表。<br>第二个是一个和电学相关的问题。其实就是 <strong>基尔霍夫定律</strong>。<br>第三个将引入一个被称为线性差分方程（ <em>linear difference equation</em> ）的概念，这是一个很有力的学习动态过程（ <em>dynamic process</em> ）的一个工具，可以广泛应用于工程，生态学，经济学，远程通信和管理学中。</p>
 <p>线性模型之所以重要。是因为自然现象在一定范围内经常是线性或接近线性的。而且，线性模型很容易通过计算机计算。</p>
 <p>第一个饮食的例子带给我们的启发很简单。我们可以把每一个食物都建立一个向量，这个向量反映它所含的营养成分。比如碳水，钙等。这样的一堆向量就会组成一个矩阵，矩阵方程的解就是最终我们需要的食物的量了。</p>
@@ -28,5 +34,8 @@ MathJax = {
 <div class="math">\[\mathbf{x_{k+1}} = A\mathbf{x_{k}}\]</div>
 <p>这样的话我们就称上面这个式子叫线性差分方程（ <em>linear difference equation</em> ）。或者称它为递推关系（ <em>recurrence relation</em> ）。</p>
 </main>
+</div>
+<button id="top" title="回到顶部" aria-label="回到顶部">↑</button>
+<script src="../app.js"></script>
 </body>
 </html>

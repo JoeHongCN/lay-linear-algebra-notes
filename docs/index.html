@@ -15,21 +15,34 @@ MathJax = {
 <script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </head>
 <body>
-<nav><a href="index.html">← 线性代数笔记</a></nav>
+<div id="progress"></div>
+<nav>
+  <a href="index.html">← 线性代数笔记</a>
+  <button id="theme" title="切换深浅色" aria-label="切换深浅色">◐</button>
+</nav>
+<div class="layout">
+<aside class="toc"><h4>本页目录</h4><ul>
+<li><a href="#目录">目录</a></li>
+<li><a href="#第一章-线性方程组" class="d3">第一章 线性方程组</a></li>
+<li><a href="#第二章-矩阵代数" class="d3">第二章 矩阵代数</a></li>
+<li><a href="#单篇" class="d3">单篇</a></li>
+<li><a href="#进度">进度</a></li>
+<li><a href="#关于图片">关于图片</a></li>
+</ul></aside>
 <main>
-<h1 id="线性代数笔记lay-6th自学">线性代数笔记（Lay 6th，自学）</h1>
+<h1 id="线性代数笔记lay-6th自学">线性代数笔记（Lay 6th，自学）<a class="anchor" href="#线性代数笔记lay-6th自学">#</a></h1>
 <p>用 Obsidian 写的自学笔记，按《Linear Algebra and Its Applications》第 6 版（David C. Lay）的章节顺序整理。正文是自己的推导与小结，配图是从教材对应页裁下来的原文。</p>
 <p>建议顺序：先 <code>第一章/</code>，再 <code>第二章/</code>；<code>线代习题选.md</code> 是配套习题解答，<code>可逆矩阵定理-展开表.md</code> 是把 2.3 的定理摊到全书各章的完整版。</p>
-<h2 id="目录">目录</h2>
-<h3 id="第一章-线性方程组">第一章 线性方程组</h3>
+<h2 id="目录">目录<a class="anchor" href="#目录">#</a></h2>
+<h3 id="第一章-线性方程组">第一章 线性方程组<a class="anchor" href="#第一章-线性方程组">#</a></h3>
 <table><thead><tr><th>文件</th><th>内容</th></tr></thead><tbody><tr><td><a href="第一章/1.5 Solution Sets of Linear Systems.html">1.5 Solution Sets of Linear Systems</a></td><td>齐次 / 非齐次方程组的解集，参数向量形式</td></tr><tr><td><a href="第一章/1.6 Applications of Linear Systems.html">1.6 Applications of Linear Systems</a></td><td>经济均衡、化学方程式配平、网络流</td></tr><tr><td><a href="第一章/1.7 Linear Independence.html">1.7 Linear Independence</a></td><td>线性无关的定义与判据</td></tr><tr><td><a href="第一章/1.8 Introduction to Linear Transformations.html">1.8 Introduction to Linear Transformations</a></td><td>矩阵变换与线性变换</td></tr><tr><td><a href="第一章/1.9 The Matrix of a Linear Transformation.html">1.9 The Matrix of a Linear Transformation</a></td><td>标准矩阵、存在唯一性、常见变换速查表</td></tr><tr><td><a href="第一章/1.10 Linear Models in Business, Science, and Engineering.html">1.10 Linear Models</a></td><td>营养配比、基尔霍夫定律、线性差分方程</td></tr><tr><td><a href="第一章/Chapter 01 Summary.html">Chapter 01 Summary</a></td><td>定理 1–12、基本方法、单箭头的等价说法</td></tr></tbody></table>
-<h3 id="第二章-矩阵代数">第二章 矩阵代数</h3>
+<h3 id="第二章-矩阵代数">第二章 矩阵代数<a class="anchor" href="#第二章-矩阵代数">#</a></h3>
 <table><thead><tr><th>文件</th><th>内容</th></tr></thead><tbody><tr><td><a href="第二章/Lead-in.html">Lead-in</a></td><td>为什么要学分块与矩阵分解</td></tr><tr><td><a href="第二章/2.1 Matrix Operations.html">2.1 Matrix Operations</a></td><td>矩阵乘法、幂、转置</td></tr><tr><td><a href="第二章/2.2 The inverse of a matrix.html">2.2 The inverse of a matrix</a></td><td>逆矩阵、初等矩阵、求逆算法</td></tr><tr><td><a href="第二章/2.3 Characterization of Invertible Matrices.html">2.3 Characterization of Invertible Matrices</a></td><td>可逆矩阵定理（十二条等价命题）</td></tr><tr><td><a href="第二章/2.4 Partitioned Matrices.html">2.4 Partitioned Matrices</a></td><td>分块运算、列-行展开、分块求逆</td></tr><tr><td><a href="第二章/2.5 Matrix Factorizations.html">2.5 Matrix Factorizations</a></td><td>LU 分解及算法</td></tr><tr><td><a href="第二章/Chapter 02 Summary.html">Chapter 02 Summary</a></td><td>第二章总结、等价说法、与第一章的接口</td></tr><tr><td><a href="第二章/思考题.html">思考题</a></td><td>整理笔记时攒下的问题</td></tr></tbody></table>
-<h3 id="单篇">单篇</h3>
+<h3 id="单篇">单篇<a class="anchor" href="#单篇">#</a></h3>
 <table><thead><tr><th>文件</th><th>内容</th></tr></thead><tbody><tr><td><a href="线代习题选.html">线代习题选</a></td><td>1.5–2.4 的习题解答</td></tr><tr><td><a href="可逆矩阵定理-展开表.html">可逆矩阵定理-展开表</a></td><td>定理 8 在 2.3 / 2.9 / 3.2 / 5.2 / 7.4 各章的追加，共 22 条</td></tr><tr><td><a href="2.1 T34补充.html">2.1 T34补充</a></td><td>第 34 题的四种构造证法</td></tr></tbody></table>
-<h2 id="进度">进度</h2>
+<h2 id="进度">进度<a class="anchor" href="#进度">#</a></h2>
 <table><thead><tr><th>章节</th><th>已成稿</th><th>未写</th></tr></thead><tbody><tr><td>第一章</td><td>1.5–1.10、总结</td><td>1.1–1.4</td></tr><tr><td>第二章</td><td>2.1–2.5、总结、思考题</td><td>2.6–2.9</td></tr><tr><td>第五章</td><td>—</td><td>全部</td></tr></tbody></table>
-<h2 id="关于图片">关于图片</h2>
+<h2 id="关于图片">关于图片<a class="anchor" href="#关于图片">#</a></h2>
 <p><code>images/</code> 里 79 张图是教材对应页的裁切，命名是 <code>p页码-左上x_左上y_右下x_右下y.png</code>。原书 PDF 有版权，不在本仓库内，只保留这些用于个人学习的截图。</p>
 <hr>
 <h2>单篇</h2>
@@ -39,5 +52,8 @@ MathJax = {
 <h2>第二章</h2>
 <ul><li><a href="第二章\2.1 Matrix Operations.html">2.1 Matrix Operations</a></li><li><a href="第二章\2.2 The inverse of a matrix.html">2.2 The inverse of a matrix</a></li><li><a href="第二章\2.3 Characterization of Invertible Matrices.html">2.3 Characterization of Invertible Matrices</a></li><li><a href="第二章\2.4 Partitioned Matrices.html">2.4 Partitioned Matrices</a></li><li><a href="第二章\2.5 Matrix Factorizations.html">2.5 Matrix Factorizations</a></li><li><a href="第二章\Chapter 02 Summary.html">Chapter 02 Summary</a></li><li><a href="第二章\Lead-in.html">Lead-in</a></li><li><a href="第二章\思考题.html">思考题</a></li></ul>
 </main>
+</div>
+<button id="top" title="回到顶部" aria-label="回到顶部">↑</button>
+<script src="app.js"></script>
 </body>
 </html>

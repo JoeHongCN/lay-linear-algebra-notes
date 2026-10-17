@@ -15,18 +15,32 @@ MathJax = {
 <script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </head>
 <body>
-<nav><a href="../index.html">← 线性代数笔记</a></nav>
+<div id="progress"></div>
+<nav>
+  <a href="../index.html">← 线性代数笔记</a>
+  <button id="theme" title="切换深浅色" aria-label="切换深浅色">◐</button>
+</nav>
+<div class="layout">
+<aside class="toc"><h4>本页目录</h4><ul>
+<li><a href="#目录">目录</a></li>
+<li><a href="#总述">总述</a></li>
+<li><a href="#homogeneous-linear-systems齐次线性方程组">Homogeneous Linear Systems——齐次线性方程组</a></li>
+<li><a href="#parametric-vector-form参数向量形式">Parametric Vector Form——参数向量形式</a></li>
+<li><a href="#solutions-of-nonhomogeneous-systems非齐次线性方程的解">Solutions of Nonhomogeneous Systems——非齐次线性方程的解</a></li>
+<li><a href="#所得结果的检验">所得结果的检验</a></li>
+<li><a href="#有意思的习题">有意思的习题</a></li>
+</ul></aside>
 <main>
-<h1 id="15-solution-sets-of-linear-systems">1.5 Solution Sets of Linear Systems</h1>
-<h2 id="目录">目录</h2>
+<h1 id="15-solution-sets-of-linear-systems">1.5 Solution Sets of Linear Systems<a class="anchor" href="#15-solution-sets-of-linear-systems">#</a></h1>
+<h2 id="目录">目录<a class="anchor" href="#目录">#</a></h2>
 <ul><li><a href="#总述">总述</a></li><li><a href="#homogeneous-linear-systems齐次线性方程组">Homogeneous Linear Systems——齐次线性方程组</a></li><li><a href="#parametric-vector-form参数向量形式">Parametric Vector Form——参数向量形式</a></li><li><a href="#solutions-of-nonhomogeneous-systems非齐次线性方程的解">Solutions of Nonhomogeneous Systems——非齐次线性方程的解</a></li><li><a href="#所得结果的检验">所得结果的检验</a></li><li><a href="#有意思的习题">有意思的习题</a></li></ul>
-<h2 id="总述">总述</h2>
+<h2 id="总述">总述<a class="anchor" href="#总述">#</a></h2>
 <p>在这一章，我们看待线性系统的角度又会发生一个变化，主要是求解层面的。</p>
 <p>大体来说，和微分方程的求解类似，我们开始把线性方程组的解集看成是 <strong>通解+特解</strong></p>
 <p>然后你就会发现，这里定义的通解和特解和微分方程很像，但也有一些细微的区别。</p>
 <p>在微分方程的求解中，其实当我们说“通解”时，会指向两个不同的事情——一是我已经得到了一个“一般”的解，其系数需要根据边界条件待定；其二是我令等号右边为 0，这样得到的解叫通解。<br>在线性系统的求解中，我们采用第二套逻辑：先把每一个等式的右侧都变为 0，得到通解。再去计算原方程组的解，得到特解。</p>
 <p>那很显然，我们并不需要特意去计算通解——特解里面一定是包含通解的。只不过我们看出它可能要费一点功夫。</p>
-<h2 id="homogeneous-linear-systems齐次线性方程组">Homogeneous Linear Systems——齐次线性方程组</h2>
+<h2 id="homogeneous-linear-systems齐次线性方程组">Homogeneous Linear Systems——齐次线性方程组<a class="anchor" href="#homogeneous-linear-systems齐次线性方程组">#</a></h2>
 <p>它的定义是这样的：</p>
 <p><img src="../images/p0071-178_640_586_684.png" alt="课本 p.70"></p>
 <p>一个可以被写为 \(A\vec{x}=\vec{0}\) 的方程组被称为齐次线性方程组。</p>
@@ -49,9 +63,9 @@ MathJax = {
 \end{bmatrix}\]</div>
 <p>可以看到，我们可以把解写成自由变量 \(\times\) 某个向量的形式。这个向量目前我们还没有命名，我们不妨先给它一个暂用的名字，叫 <strong>解向量</strong></p>
 <p>很自然地，齐次线性方程组的解一定在解向量张成的空间中。事实上，这个空间也就是所有解构成的集合。</p>
-<h2 id="parametric-vector-form参数向量形式">Parametric Vector Form——参数向量形式</h2>
+<h2 id="parametric-vector-form参数向量形式">Parametric Vector Form——参数向量形式<a class="anchor" href="#parametric-vector-form参数向量形式">#</a></h2>
 <p>这是解的一种表现形式，也就是我们前面提到的 <em class="cjk">自由变量\(\times\)解向量</em>，其实和线性组合的表现形式是一样一样的。</p>
-<h2 id="solutions-of-nonhomogeneous-systems非齐次线性方程的解">Solutions of Nonhomogeneous Systems——非齐次线性方程的解</h2>
+<h2 id="solutions-of-nonhomogeneous-systems非齐次线性方程的解">Solutions of Nonhomogeneous Systems——非齐次线性方程的解<a class="anchor" href="#solutions-of-nonhomogeneous-systems非齐次线性方程的解">#</a></h2>
 <p>其实就是\(A \vec{x}=\vec{b}\ne \vec{0}\)的解<br>我们之前就做过这件事情了，无非是化简增广矩阵到最简形式。我们在这里更进一步地，代入我们的参数表示后，转换成参数向量形式<br>比如我们的 Example3 就给出了这样的一个例子</p>
 <div class="math">\[\vec{x} = \begin{bmatrix}
 -1 \\
@@ -70,10 +84,13 @@ MathJax = {
 <p><img src="../images/p0074-223_211_572_348.png" alt="课本 p.74"></p>
 <p>翻译一下就是：<br>1、行简化增广矩阵至行最简阶梯形<br>2、用自由变量表示每一个基本变量<br>3、把 \(\vec{x}\) 中的每一项用自由变量表示<br>4、以自由变量为参数将\(\vec{x}\)分解为线性组合</p>
 <hr>
-<h2 id="所得结果的检验">所得结果的检验</h2>
+<h2 id="所得结果的检验">所得结果的检验<a class="anchor" href="#所得结果的检验">#</a></h2>
 <p>矩阵乘法乘回去。特解应该得到 \(\vec{b}\)，通解应该得到\(\vec{0}\)</p>
-<h2 id="有意思的习题">有意思的习题</h2>
+<h2 id="有意思的习题">有意思的习题<a class="anchor" href="#有意思的习题">#</a></h2>
 <p><a href="../线代习题选.html#15-37">37、Theorem 6的证明</a></p>
 </main>
+</div>
+<button id="top" title="回到顶部" aria-label="回到顶部">↑</button>
+<script src="../app.js"></script>
 </body>
 </html>

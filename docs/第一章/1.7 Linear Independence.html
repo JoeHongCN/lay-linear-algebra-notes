@@ -15,10 +15,16 @@ MathJax = {
 <script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </head>
 <body>
-<nav><a href="../index.html">← 线性代数笔记</a></nav>
+<div id="progress"></div>
+<nav>
+  <a href="../index.html">← 线性代数笔记</a>
+  <button id="theme" title="切换深浅色" aria-label="切换深浅色">◐</button>
+</nav>
+<div class="layout">
+
 <main>
-<h1 id="线性无关">线性无关</h1>
-<h2 id="引入">引入</h2>
+<h1 id="线性无关">线性无关<a class="anchor" href="#线性无关">#</a></h1>
+<h2 id="引入">引入<a class="anchor" href="#引入">#</a></h2>
 <p>我们在 <a href="1.5%20Solution%20Sets%20of%20Linear%20Systems.html">1.5 Solution Sets of Linear Systems</a> 中学到的齐次线性方程组可以看作矢量方程，这样我们关注的重心就不再是方程的解，而是那几个矢量了。从这个角度出发，我们就会得到几个矢量 <strong>线性相关/线性无关</strong> 的定义：</p>
 <p><img src="../images/p0085-96_335_526_440.png" alt="课本 p.85"></p>
 <p>其实稍微移项就会发现：</p>
@@ -60,5 +66,8 @@ MathJax = {
 <p>即：含有零向量。这显然吧……</p>
 <p>习题：<br><a href="../线代习题选.html#17-42">线代习题选#1.7 42</a></p>
 </main>
+</div>
+<button id="top" title="回到顶部" aria-label="回到顶部">↑</button>
+<script src="../app.js"></script>
 </body>
 </html>

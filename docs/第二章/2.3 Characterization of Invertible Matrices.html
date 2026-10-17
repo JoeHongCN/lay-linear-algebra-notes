@@ -15,9 +15,15 @@ MathJax = {
 <script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </head>
 <body>
-<nav><a href="../index.html">← 线性代数笔记</a></nav>
+<div id="progress"></div>
+<nav>
+  <a href="../index.html">← 线性代数笔记</a>
+  <button id="theme" title="切换深浅色" aria-label="切换深浅色">◐</button>
+</nav>
+<div class="layout">
+
 <main>
-<h1 id="23-characterization-of-invertible-matrices">2.3 Characterization of Invertible Matrices</h1>
+<h1 id="23-characterization-of-invertible-matrices">2.3 Characterization of Invertible Matrices<a class="anchor" href="#23-characterization-of-invertible-matrices">#</a></h1>
 <p>本节回顾第 1 章引入的大部分概念，把它们与 \(n\) 个未知数的 \(n\) 个线性方程组、以及<strong>方阵</strong>联系起来。主要结果是下面这个定理（ <strong>可逆矩阵定理</strong>  ）：</p>
 <p><img src="../images/p0146-149_374_572_614.png" alt="课本 p.146"></p>
 <p>对于一个 \(n\times n\) 的方阵，下面这些命题是等价的。也就是说，它们 <em class="cjk">要么全对，要么全错</em>。</p>
@@ -30,7 +36,7 @@ MathJax = {
 <p><img src="../images/p0147-177_634_527_673.png" alt="课本 p.147"></p>
 <p>这个可逆矩阵定理把 \(n \times n\) 的矩阵分为了两类：一类是可逆的（非奇异的），另一类是不可逆的（奇异的）。每一个定理里的命题事实上给出了可逆矩阵的一个性质。它们的反命题也就给出了不可逆矩阵的性质。比如说，一个 \(n \times n\) 的奇异矩阵就 <strong>不</strong> 行等价于一个单位矩阵，也没有 n 个 <em>pivot position</em>，有着线性相关的列。我们在练习中会看到这一点的。</p>
 <p>这个定理是很有用的，因为它链接起了很多的概念，比如说线性无关，存在性和唯一性问题。当然，我们也要强调：这个可逆矩阵定理 <strong>只适用于方阵</strong>，我们不能把它运用在一般的矩阵上。但是这也很强了。</p>
-<h3 id="可逆线性变换">可逆线性变换</h3>
+<h3 id="可逆线性变换">可逆线性变换<a class="anchor" href="#可逆线性变换">#</a></h3>
 <p>回忆 <a href="2.1%20Matrix%20Operations.html">2.1 Matrix Operations</a> 中矩阵乘法和线性变换之间的联系。当矩阵 A 可逆的时候，我们就可以把这个方程</p>
 <div class="math">\[A^{-1}A\mathbf{x} = \mathbf{x}\]</div>
 <p>看成是一个线性变换的命题，比如这个图</p>
@@ -44,5 +50,8 @@ T(S(x)) = x
 <p><img src="../images/p0148-150_629_572_698.png" alt="课本 p.148"></p>
 <p>证明如下：如果 T 可逆，那么 T 是一个满射（对于任意的 \(\mathbf{x}\) 都有解 \(S(\mathbf{x})\)），这意味着 A 可逆；<br>如果 A 可逆，那么让 \(S(\mathbf{x})=A^{-1}(\mathbf{x})\)，那么 S 就是一个线性变换，然后 \(S\) 显然满足这两个方程。于是 \(T\) 可逆。<br>对 \(S\) 唯一性的证明可以看 <em>exercise 47</em></p>
 </main>
+</div>
+<button id="top" title="回到顶部" aria-label="回到顶部">↑</button>
+<script src="../app.js"></script>
 </body>
 </html>

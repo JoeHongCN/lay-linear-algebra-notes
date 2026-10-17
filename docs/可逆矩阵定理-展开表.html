@@ -15,14 +15,28 @@ MathJax = {
 <script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </head>
 <body>
-<nav><a href="index.html">← 线性代数笔记</a></nav>
+<div id="progress"></div>
+<nav>
+  <a href="index.html">← 线性代数笔记</a>
+  <button id="theme" title="切换深浅色" aria-label="切换深浅色">◐</button>
+</nav>
+<div class="layout">
+<aside class="toc"><h4>本页目录</h4><ul>
+<li><a href="#目录">目录</a></li>
+<li><a href="#一课本-23-的原表theorem-8al-十二条">一、课本 2.3 的原表（Theorem 8，a–l 十二条）</a></li>
+<li><a href="#二十二条其实是四个说法各两种说法">二、十二条其实是四个说法各两种说法</a></li>
+<li><a href="#三展开各章往定理里追加的条目">三、展开：各章往定理里追加的条目</a></li>
+<li><a href="#四为什么停在-22-条">四、为什么停在 22 条</a></li>
+<li><a href="#五一条判据">五、一条判据</a></li>
+<li><a href="#待核">待核</a></li>
+</ul></aside>
 <main>
-<h1 id="可逆矩阵定理-展开表">可逆矩阵定理 · 展开表</h1>
-<h2 id="目录">目录</h2>
+<h1 id="可逆矩阵定理-展开表">可逆矩阵定理 · 展开表<a class="anchor" href="#可逆矩阵定理-展开表">#</a></h1>
+<h2 id="目录">目录<a class="anchor" href="#目录">#</a></h2>
 <ul><li><a href="#一课本-23-的原表theorem-8al-十二条">一、课本 2.3 的原表（Theorem 8，a–l 十二条）</a></li><li><a href="#二十二条其实是四个说法各两种说法">二、十二条其实是四个说法各两种说法</a></li><li><a href="#三展开各章往定理里追加的条目">三、展开：各章往定理里追加的条目</a></li><li><a href="#四为什么停在-22-条">四、为什么停在 22 条</a></li><li><a href="#五一条判据">五、一条判据</a></li><li><a href="#待核">待核</a></li></ul>
 <blockquote><p>用途：把散在 2.3、2.9、3.2、4.5、5.2、7.4 各处的「等价于可逆」的命题合成一张表。<br>出处：Lay《Linear Algebra and Its Applications》6th。页码是 PDF 物理页（与 Obsidian <code>#page=</code> 一致）。<br>记号：✅ = 我抽原文核过；⚠️ = 定理号／页码待核，暂按该章结论使用。</p></blockquote>
 <hr>
-<h2 id="一课本-23-的原表theorem-8al-十二条">一、课本 2.3 的原表（Theorem 8，a–l 十二条）</h2>
+<h2 id="一课本-23-的原表theorem-8al-十二条">一、课本 2.3 的原表（Theorem 8，a–l 十二条）<a class="anchor" href="#一课本-23-的原表theorem-8al-十二条">#</a></h2>
 <p>设 \(A\) 是 \(n\times n\) 方阵。下列命题<strong>要么全对，要么全错</strong>。</p>
 <table><thead><tr><th>编号</th><th>命题</th><th>所看的侧面</th><th>页</th></tr></thead><tbody><tr><td>a</td><td>\(A\) 可逆</td><td>代数</td><td>146</td></tr><tr><td>b</td><td>\(A\) 行等价于 \(I_n\)</td><td>行化简</td><td>146</td></tr><tr><td>c</td><td>\(A\) 有 \(n\) 个 pivot position</td><td>行化简</td><td>146</td></tr><tr><td>d</td><td>\(A\mathbf x=\mathbf 0\) 只有平凡解</td><td>解集</td><td>146</td></tr><tr><td>e</td><td>\(A\) 的各列线性无关</td><td>列</td><td>146</td></tr><tr><td>f</td><td>\(\mathbf x\mapsto A\mathbf x\) 是单射</td><td>变换</td><td>146</td></tr><tr><td>g</td><td>\(A\mathbf x=\mathbf b\) 对每个 \(\mathbf b\in\mathbb R^n\) 至少有一个解</td><td>解集</td><td>146</td></tr><tr><td>h</td><td>\(A\) 的各列张开 \(\mathbb R^n\)</td><td>列</td><td>146</td></tr><tr><td>i</td><td>\(\mathbf x\mapsto A\mathbf x\) 把 \(\mathbb R^n\) 映满 \(\mathbb R^n\)</td><td>变换</td><td>146</td></tr><tr><td>j</td><td>存在 \(n\times n\) 的 \(C\) 使 \(CA=I\)</td><td>左逆</td><td>146</td></tr><tr><td>k</td><td>存在 \(n\times n\) 的 \(D\) 使 \(AD=I\)</td><td>右逆</td><td>146</td></tr><tr><td>l</td><td>\(A^{\mathsf T}\) 可逆</td><td>转置</td><td>146</td></tr></tbody></table>
 <p><strong>证明的形状</strong>（p.146 的 Figure 1）：先证成环的五条</p>
@@ -30,11 +44,11 @@ MathJax = {
 <p>再把其余的挂上去：\((a)\Rightarrow(k)\Rightarrow(g)\Rightarrow(a)\)；\((g),(h),(i)\) 由 1.4 Thm 4 与 1.9 Thm 12(a) 三向等价；\((d),(e),(f)\) 由 1.7 与 1.9 Thm 12(b) 三向等价；\((a)\Rightarrow(l)\Rightarrow(a)\)。</p>
 <p>要点：<strong>十二条只需证一个环加五根挂钩，不必两两互推。</strong></p>
 <hr>
-<h2 id="二十二条其实是四个说法各两种说法">二、十二条其实是四个说法各两种说法</h2>
+<h2 id="二十二条其实是四个说法各两种说法">二、十二条其实是四个说法各两种说法<a class="anchor" href="#二十二条其实是四个说法各两种说法">#</a></h2>
 <table><thead><tr><th>层</th><th>说法一</th><th>说法二</th><th>说的是</th></tr></thead><tbody><tr><td>齐次</td><td>(d) \(A\mathbf x=\mathbf 0\) 只有平凡解</td><td>(e) 各列线性无关</td><td>没有一个非零向量被压成 \(0\)</td></tr><tr><td>非齐次</td><td>(g) 每个 \(\mathbf b\) 都有解</td><td>(h) 各列张开 \(\mathbb R^n\)</td><td>每个 \(\mathbf b\) 都够得着</td></tr><tr><td>映射</td><td>(f) 单射</td><td>(i) 满射</td><td>方阵时单射与满射合一</td></tr><tr><td>行化简</td><td>(b) \(A\sim I_n\)</td><td>(c) \(n\) 个 pivot</td><td>没有自由变量、没有缺行</td></tr><tr><td>左逆／右逆</td><td>(j) \(CA=I\)</td><td>(k) \(AD=I\)</td><td>方阵时左逆＝右逆（T30–T34）</td></tr><tr><td>转置</td><td>(l) \(A^{\mathsf T}\) 可逆</td><td>—</td><td>行与列地位对等</td></tr></tbody></table>
 <blockquote><p><strong>(f) 与 (i) 在方阵上合一，是整张表最反直觉的一条。</strong> 长方阵上单射与满射互不相干（4×3 可以单射不满射，3×4 可以满射不单射）。<br>所以课本特意点明：<strong>IMT 只管方阵</strong>（p.146）。一个 \(4\times3\) 矩阵各列线性无关，不能由此对 \(A\mathbf x=\mathbf b\) 的有解性说任何话。</p></blockquote>
 <hr>
-<h2 id="三展开各章往定理里追加的条目">三、展开：各章往定理里追加的条目</h2>
+<h2 id="三展开各章往定理里追加的条目">三、展开：各章往定理里追加的条目<a class="anchor" href="#三展开各章往定理里追加的条目">#</a></h2>
 <p>课本自己在 p.271 说明过，这些是<strong>逐章追加</strong>进同一条定理的。</p>
 <table><thead><tr><th>新编号</th><th>命题</th><th>出处</th><th>加的是哪一种视角</th><th>核</th></tr></thead><tbody><tr><td>m</td><td>\(A\) 的各列构成 \(\mathbb R^n\) 的一组基</td><td>2.9，p.271</td><td>独立＋张开的合并说法</td><td>✅</td></tr><tr><td>n</td><td>\(\operatorname{Col}A=\mathbb R^n\)</td><td>2.9，p.271</td><td>列空间</td><td>✅</td></tr><tr><td>o</td><td>\(\operatorname{rank}A=n\)</td><td>2.9，p.271</td><td>秩</td><td>✅</td></tr><tr><td>p</td><td>\(\operatorname{nullity}A=0\)</td><td>2.9，p.271</td><td>零度</td><td>✅</td></tr><tr><td>q</td><td>\(\operatorname{Nul}A=\{\mathbf 0\}\)</td><td>2.9，p.271</td><td>零空间</td><td>✅</td></tr><tr><td>—</td><td>\(\det A\neq0\)</td><td>3.2 Thm 4，p.187</td><td>行列式</td><td>✅</td></tr><tr><td>r</td><td>\(0\) 不是 \(A\) 的特征值</td><td>5.2，p.308</td><td>特征值</td><td>✅</td></tr><tr><td>s</td><td>\((\operatorname{Col}A)^{\perp}=\{\mathbf 0\}\)</td><td>7.4，p.471</td><td>正交补</td><td>✅</td></tr><tr><td>t</td><td>\((\operatorname{Nul}A)^{\perp}=\mathbb R^n\)</td><td>7.4，p.471</td><td>正交补</td><td>✅</td></tr><tr><td>u</td><td>\(\operatorname{Row}A=\mathbb R^n\)</td><td>7.4，p.471</td><td>行空间</td><td>✅</td></tr><tr><td>v</td><td>\(A\) 有 \(n\) 个非零奇异值</td><td>7.4，p.471</td><td>奇异值分解</td><td>✅</td></tr></tbody></table>
 <p>追加的推理链（2.9 原文）：</p>
@@ -43,17 +57,20 @@ MathJax = {
 <p>其余几条的链：</p>
 <table><thead><tr><th>新条目</th><th>挂法</th></tr></thead><tbody><tr><td>\(\det A\neq0\)</td><td>等价于<strong>所有 pivot 之积非零</strong>，直接接 (c)</td></tr><tr><td>\(0\) 不是特征值</td><td>\(A\mathbf x=0\mathbf x\) 有非零解 \(\iff\det(A-0I)=\det A=0\)，接 (d)</td></tr><tr><td>s、t、u</td><td>正交补的维数关系，接 (n)、(q)</td></tr><tr><td>v</td><td>\(A\) 的奇异值个数＝\(\operatorname{rank}A\)，接 (o)</td></tr></tbody></table>
 <hr>
-<h2 id="四为什么停在-22-条">四、为什么停在 22 条</h2>
+<h2 id="四为什么停在-22-条">四、为什么停在 22 条<a class="anchor" href="#四为什么停在-22-条">#</a></h2>
 <p>课本 p.271 原话：<strong>关于行空间的显然说法一律不列</strong>，因为行空间就是 \(A^{\mathsf T}\) 的列空间，而 (l) 已说明 \(A\) 可逆当且仅当 \(A^{\mathsf T}\) 可逆。把每条对 \(A^{\mathsf T}\) 再说一遍，<strong>会超过 30 条</strong>。</p>
 <p>所以上表是「只写列那一边」的结果；行那一边整体由 (l) 免费带出。</p>
 <hr>
-<h2 id="五一条判据">五、一条判据</h2>
+<h2 id="五一条判据">五、一条判据<a class="anchor" href="#五一条判据">#</a></h2>
 <div class="math">\[A_{n\times n}\ \text{可逆}\iff\det A\neq0\iff\operatorname{rank}A=n\iff 0\notin\sigma(A)\iff(\operatorname{Col}A)^{\perp}=\{\mathbf 0\}\]</div>
 <p>五句都是同一件事，各自在不同场合好用：算小矩阵用 \(\det\)；判断零空间用 \(\operatorname{rank}\)；讨论 \(A-\lambda I\) 用特征值；谈最小二乘和 SVD 用正交补与奇异值。</p>
 <p><strong>只对方阵成立。</strong> 离开方阵，这五句各走各的。</p>
 <hr>
-<h2 id="待核">待核</h2>
+<h2 id="待核">待核<a class="anchor" href="#待核">#</a></h2>
 <table><thead><tr><th>项</th><th>说明</th></tr></thead><tbody><tr><td>⚠️ m–v 的定理号</td><td>2.9、3.2、5.2、7.4 四处课本用的是无编号的 "THEOREM The Invertible Matrix Theorem (continued)"，只有 2.3 的 Thm 8 有编号。上表按「节＋页」记账</td></tr><tr><td>⚠️ 4.5 那处</td><td>抽出的文字里同一节出现了两份，页码有出入，哪一份是正文待核</td></tr><tr><td>Study Guide</td><td>库里没有。p.146 提到的 expanded table 在配套 Study Guide 里；要看原版得另找这本书</td></tr></tbody></table>
 </main>
+</div>
+<button id="top" title="回到顶部" aria-label="回到顶部">↑</button>
+<script src="app.js"></script>
 </body>
 </html>

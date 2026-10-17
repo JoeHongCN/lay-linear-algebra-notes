@@ -15,9 +15,15 @@ MathJax = {
 <script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </head>
 <body>
-<nav><a href="../index.html">← 线性代数笔记</a></nav>
+<div id="progress"></div>
+<nav>
+  <a href="../index.html">← 线性代数笔记</a>
+  <button id="theme" title="切换深浅色" aria-label="切换深浅色">◐</button>
+</nav>
+<div class="layout">
+
 <main>
-<h1 id="19-the-matrix-of-a-linear-transformation">1.9 The Matrix of a Linear Transformation</h1>
+<h1 id="19-the-matrix-of-a-linear-transformation">1.9 The Matrix of a Linear Transformation<a class="anchor" href="#19-the-matrix-of-a-linear-transformation">#</a></h1>
 <p>当我们提到线性变换 T 的时候，我们总会想着找到一个 \(T(x)\) 的表达式。下面的讨论会说明：事实上，每一个线性变换都与一个矩阵\(A\)相对应。<br>而找到这个 \(A\) 的关键，就是找到这个线性变换对一个单位矩阵 \(I_{n}\) 的每一列做了什么。更具体的：<strong>\(T\)完全由\(T\)对单位矩阵的每一列做了什么决定</strong>。</p>
 <p><img src="../images/p0100-76_51_581_303.png" alt="课本 p.100"></p>
 <p>比如这个算例，就很清晰地展现了如何由 \(T\) 对单位矩阵的两列 \(e_{1},e_{2}\) 的变换推导 \(T\) 对任意一个 \(x \in ℝ^2\) 的向量是如何变换的。具体地：先把 \(\mathbf{x}\) 拆成线性组合，再利用线性变换的 <em class="cjk">线性</em> 做完这件事情。<br>同时我们注意方程（2）的形式。这事实上就是一个矩阵和向量的乘法。我们完全可以直接写出 \(A\) 来。所以，一般的，我们可以把 \(A\) 的形式表示成下面这样：</p>
@@ -27,7 +33,7 @@ MathJax = {
 <blockquote><p>我们现在知道，从 \(R_{n}\) 到 \(R_{m}\) 的每一个<strong>线性变换</strong>都可以看作一个<strong>矩阵变换</strong>，反之亦然。“线性变换”这一术语侧重的是映射的一种<em class="cjk">性质</em>，而“矩阵变换”则描述这种映射是如何<em class="cjk">实现</em>的，正如例 2 和例 3 所说明的那样。</p></blockquote>
 <p>下面是一个速查表：</p>
 <table><thead><tr><th>变换</th><th>矩阵</th><th>备注</th></tr></thead><tbody><tr><td>关于 \(x\) 轴反射</td><td>\(\begin{pmatrix}1&0\\0&-1\end{pmatrix}\)</td><td>行列式 \(-1\)</td></tr><tr><td>关于 \(y\) 轴反射</td><td>\(\begin{pmatrix}-1&0\\0&1\end{pmatrix}\)</td><td>行列式 \(-1\)</td></tr><tr><td>关于 \(y=x\) 反射</td><td>\(\begin{pmatrix}0&1\\1&0\end{pmatrix}\)</td><td>交换坐标</td></tr><tr><td>关于 \(y=-x\) 反射</td><td>\(\begin{pmatrix}0&-1\\-1&0\end{pmatrix}\)</td><td>交换并取反</td></tr><tr><td>关于角 \(\theta\) 直线反射</td><td>\(\begin{pmatrix}\cos 2\theta&\sin 2\theta\\ \sin 2\theta&-\cos 2\theta\end{pmatrix}\)</td><td>过原点直线</td></tr><tr><td>沿 \(x\) 轴伸缩</td><td>\(\begin{pmatrix}k&0\\0&1\end{pmatrix}\)</td><td>\(k>1\) 拉伸，\(0<k<1\) 压缩</td></tr><tr><td>沿 \(y\) 轴伸缩</td><td>\(\begin{pmatrix}1&0\\0&k\end{pmatrix}\)</td><td>同上</td></tr><tr><td>均匀伸缩</td><td>\(\begin{pmatrix}k&0\\0&k\end{pmatrix}\)</td><td>整体缩放</td></tr><tr><td>水平剪切</td><td>\(\begin{pmatrix}1&k\\0&1\end{pmatrix}\)</td><td>面积不变</td></tr><tr><td>垂直剪切</td><td>\(\begin{pmatrix}1&0\\k&1\end{pmatrix}\)</td><td>面积不变</td></tr><tr><td>到 \(x\) 轴投影</td><td>\(\begin{pmatrix}1&0\\0&0\end{pmatrix}\)</td><td>不可逆</td></tr><tr><td>到 \(y\) 轴投影</td><td>\(\begin{pmatrix}0&0\\0&1\end{pmatrix}\)</td><td>不可逆</td></tr><tr><td>到方向 \((a,b)\) 投影</td><td>\(\frac{1}{a^2+b^2}\begin{pmatrix}a^2&ab\\ab&b^2\end{pmatrix}\)</td><td>正交投影</td></tr></tbody></table>
-<h2 id="existence-and-uniqueness-questions">Existence and Uniqueness Questions</h2>
+<h2 id="existence-and-uniqueness-questions">Existence and Uniqueness Questions<a class="anchor" href="#existence-and-uniqueness-questions">#</a></h2>
 <blockquote><p>线性变换给出了一个新的理解存在性和唯一性问题的方式。</p></blockquote>
 <p>首先给出两个定义。</p>
 <p><img src="../images/p0102-225_269_570_301.png" alt="课本 p.102"></p>
@@ -49,5 +55,8 @@ MathJax = {
 <p><img src="../images/p0107-169_276_530_494.png" alt="课本 p.107"></p>
 <p>习题选：<br><a href="../线代习题选.html#19-41">T41</a></p>
 </main>
+</div>
+<button id="top" title="回到顶部" aria-label="回到顶部">↑</button>
+<script src="../app.js"></script>
 </body>
 </html>
