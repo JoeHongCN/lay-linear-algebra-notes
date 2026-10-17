@@ -182,11 +182,11 @@ main {
 
 @media (min-width: 1280px) {
   .layout.has-toc {
-    grid-template-columns: max-content minmax(0, var(--wide));
+    grid-template-columns: max-content minmax(0, 1fr);
     gap: 1.4em;
     align-items: start;
-    justify-content: start;
-    padding-left: 2.5em;
+    padding-left: 2em;
+    padding-right: 2em;
   }
   .toc {
     display: block;
@@ -197,7 +197,8 @@ main {
     overflow-y: auto;
     padding-top: 2.4em;
   }
-  .layout.has-toc main { margin: 0; }
+  /* 正文在「除去目录之后」的空间里居中 */
+  .layout.has-toc main { margin: 0 auto; }
   /* 有侧栏时长屏可见的目录不必再占正文 */
   .layout.has-toc .inpage-toc { display: none; }
 }
