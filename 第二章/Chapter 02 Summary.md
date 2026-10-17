@@ -12,7 +12,11 @@
 - **相等**：大小相同且**逐列相等**。
 - **加法 / 数乘**：都是**逐列**定义的（第 $j$ 列相加 / 各列乘 $r$）。
 - **乘法**（要求 $A$ 的列数 $=$ $B$ 的行数）：
-  $$AB = \begin{bmatrix}A\mathbf{b_1}&\cdots&A\mathbf{b_p}\end{bmatrix},\qquad (AB)_{ij}=\sum_{l}a_{il}b_{lj}$$
+
+$$
+AB = \begin{bmatrix}A\mathbf{b_1}&\cdots&A\mathbf{b_p}\end{bmatrix},\qquad (AB)_{ij}=\sum_{l}a_{il}b_{lj}
+$$
+
   形状规则：$(m\times n)(n\times p)\to m\times p$，中间的 $n$ 被抹掉。
 
 **一句话抓住乘法**：$AB$ 的第 $j$ 列就是 $A$ 乘 $B$ 的第 $j$ 列。等价地，$AB$ 的各列都是 $A$ 各列的线性组合。这一条是后面所有"反直觉"现象的总根源。
@@ -63,7 +67,9 @@ $A$ 是 $n\times n$ **可逆**，若存在 $C$ 使 $CA=AC=I_n$，记 $C=A^{-1}$�
 
 ## $2\times2$ 的公式
 
-$$A=\begin{bmatrix}a&b\\c&d\end{bmatrix}\ \Longrightarrow\ A^{-1}=\frac{1}{ad-bc}\begin{bmatrix}d&-b\\-c&a\end{bmatrix}$$
+$$
+A=\begin{bmatrix}a&b\\c&d\end{bmatrix}\ \Longrightarrow\ A^{-1}=\frac{1}{ad-bc}\begin{bmatrix}d&-b\\-c&a\end{bmatrix}
+$$
 
 $ad-bc=\det A$ 叫**行列式**。至少在 $2\times2$：**$A$ 可逆 $\iff\det A\neq0$**。（证明见 exercise 35, 36）
 
@@ -96,7 +102,10 @@ $A$ 可逆时，$A\mathbf x=\mathbf b$ 的解为 $\mathbf x=A^{-1}\mathbf b$，*
 证明思路（方阵是关键）：$A$ 可逆 $\Rightarrow A\mathbf x$ 满射 $\Rightarrow$ 每行都有 pivot $\Rightarrow$ 方阵的 pivot 只能在对角 $\Rightarrow$ REF 就是 $I_n$。反向：$A\sim I_n$ 给出初等矩阵乘积 $E_k\cdots E_1A=I_n$，故 $A^{-1}=E_k\cdots E_1$。
 
 **算法**：
-$$[\,A\mid I_n\,]\ \xrightarrow{\text{行化简}}\ [\,I_n\mid A^{-1}\,]$$
+
+$$
+[\,A\mid I_n\,]\ \xrightarrow{\text{行化简}}\ [\,I_n\mid A^{-1}\,]
+$$
 
 这就把求逆彻底变成了行化简。
 
@@ -154,13 +163,17 @@ $T:\mathbb R^n\to\mathbb R^n$ **可逆**，若存在 $S$ 使 $ST=I$ 且 $TS=I$�
 - **数乘**：显然。
 - **乘法**：要求 $A$ 的**列划分**与 $B$ 的**行划分**一致。满足则称两个分块**conformable for block multiplication**。
 
-$$\boxed{\text{分块乘法} = \text{普通乘法}}$$
+$$
+\boxed{\text{分块乘法} = \text{普通乘法}}
+$$
 
 只是 entry 不再是数而是矩阵，乘法不再是实数乘法而是矩阵乘法。（两种定义等价，证明略。）
 
 ## 列-行展开
 
-$$AB = \sum_{i}\big(\text{$A$ 的第 }i\text{ 列}\big)\big(\text{$B$ 的第 }i\text{ 行}\big)$$
+$$
+AB = \sum_{i}\big(\text{$A$ 的第 }i\text{ 列}\big)\big(\text{$B$ 的第 }i\text{ 行}\big)
+$$
 
 | | 视角 | 每一项 | 出处 |
 |---|---|---|---|
@@ -191,7 +204,9 @@ $$AB = \sum_{i}\big(\text{$A$ 的第 }i\text{ 列}\big)\big(\text{$B$ 的第 }i\
 
 **为什么有用**：把 $A\mathbf x=\mathbf b$ 写成 $L(U\mathbf x)=\mathbf b$，令 $\mathbf y=U\mathbf x$，则
 
-$$L\mathbf y=\mathbf b,\qquad U\mathbf x=\mathbf y$$
+$$
+L\mathbf y=\mathbf b,\qquad U\mathbf x=\mathbf y
+$$
 
 看似把一次求解变成两次，**但 $L,U$ 都是三角矩阵，求解只是逐行代入**，代价很低。
 
@@ -202,7 +217,9 @@ $$L\mathbf y=\mathbf b,\qquad U\mathbf x=\mathbf y$$
 
 只允许**行替换**（某行加上它下方某行的倍数）时：
 
-$$E_p\cdots E_1A=U,\qquad A=(E_p\cdots E_1)^{-1}U=LU,\qquad L=(E_p\cdots E_1)^{-1}$$
+$$
+E_p\cdots E_1A=U,\qquad A=(E_p\cdots E_1)^{-1}U=LU,\qquad L=(E_p\cdots E_1)^{-1}
+$$
 
 依据：**单位下三角矩阵的乘积仍是单位下三角矩阵**。行变换把 $A$ 变成 $U$ 的同时，把 $L$ 从 $I$ 变成其最终形态——所以 $L$ 可以直接"读"出来。
 
