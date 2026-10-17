@@ -332,30 +332,62 @@ blockquote {
 
 blockquote p { margin: 0; }
 
-/* Obsidian 风格的 callout：> [!NOTE] / [!WARNING] … */
+/* callout：整框圆角 + 同色淡底 + 图标 + 标题行 */
 blockquote.alert {
+  border: 1px solid color-mix(in srgb, var(--alert) 24%, transparent);
   border-left: 3px solid var(--alert);
-  background: color-mix(in srgb, var(--alert) 9%, transparent);
-  border-radius: 0 6px 6px 0;
-  padding: 0.8em 1.1em;
+  background: color-mix(in srgb, var(--alert) 6%, transparent);
+  border-radius: 10px;
+  padding: 0.85em 1.15em 0.9em;
   color: var(--fg);
+  margin: 1.8em 0;
 }
 
-blockquote.alert::before {
-  content: attr(data-kind);
-  display: block;
-  margin-bottom: 0.35em;
-  font-size: 0.78em;
+.callout-title {
+  display: flex;
+  align-items: center;
+  gap: 0.45em;
+  margin: 0 0 0.5em;
+  font-size: 0.8em;
+  font-weight: 700;
   letter-spacing: 0.1em;
   color: var(--alert);
-  font-weight: 700;
 }
 
-blockquote.alert.note { --alert: var(--alert-note); }
-blockquote.alert.tip { --alert: var(--alert-tip); }
-blockquote.alert.important { --alert: var(--alert-important); }
-blockquote.alert.warning { --alert: var(--alert-warning); }
-blockquote.alert.caution { --alert: var(--alert-caution); }
+.callout-title::before {
+  content: "";
+  flex: none;
+  width: 1.05em;
+  height: 1.05em;
+  background: currentColor;
+  -webkit-mask: var(--icon) center / contain no-repeat;
+  mask: var(--icon) center / contain no-repeat;
+}
+
+blockquote.alert.note {
+  --alert: var(--alert-note);
+  --icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 2a10 10 0 100 20 10 10 0 000-20zm1 15h-2v-6h2zm0-8h-2V7h2z'/%3E%3C/svg%3E");
+}
+
+blockquote.alert.tip {
+  --alert: var(--alert-tip);
+  --icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 2a7 7 0 00-4 12.7V17h8v-2.3A7 7 0 0012 2zM9 19h6v2H9z'/%3E%3C/svg%3E");
+}
+
+blockquote.alert.important {
+  --alert: var(--alert-important);
+  --icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 2l2.9 6.3 6.9.7-5.2 4.6 1.5 6.8L12 17l-6.1 3.4 1.5-6.8L2.2 9l6.9-.7z'/%3E%3C/svg%3E");
+}
+
+blockquote.alert.warning {
+  --alert: var(--alert-warning);
+  --icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 2l10 19H2zm-1 7v6h2V9zm0 8v2h2v-2z'/%3E%3C/svg%3E");
+}
+
+blockquote.alert.caution {
+  --alert: var(--alert-caution);
+  --icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M8 2h8l6 6v8l-6 6H8l-6-6V8zm2.6 6.2L12 10.6l1.4-1.4 1.4 1.4L13.4 12l1.4 1.4-1.4 1.4L12 13.4l-1.4 1.4-1.4-1.4L10.6 12 9.2 10.6z'/%3E%3C/svg%3E");
+}
 
 code {
   font-family: "Latin Modern Mono", Consolas, "Courier New", monospace;
