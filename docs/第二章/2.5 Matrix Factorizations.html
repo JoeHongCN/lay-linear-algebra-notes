@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>2.5 Matrix Factorizations</title>
-<link rel="stylesheet" href="../style.css?v=1792251044">
+<link rel="stylesheet" href="../style.css?v=1792251189">
 <script>
 MathJax = {
   tex: { inlineMath: [['\\(', '\\)']], displayMath: [['\\[', '\\]']],
@@ -42,7 +42,7 @@ U\mathbf{x} &amp; =\mathbf{y}
 <p>这大概是一个 \(m^2\) 的复杂度，与之对比，我们可以看回我们很早之前的一个结论。</p>
 <p><img src="../images/p0046-25_415_584_717.png" alt="课本 p.46"></p>
 <p>也就是正常做行简化求解方程大概是一个 \(n^3\) 的复杂度。显然慢得多了。</p>
-<blockquote class="alert note"><p>不过这似乎并没有想象中的从 \(n^3\) 到 \(n^2\) 的大优化，因为我们还没有说明我们是怎么得到这个 LU 分解的。正如我们后面要看到的，其实得到 LU 分解我们照样要进行一个 REF，这依然刚需一个 \(n^3\) 的复杂度。只不过也就到 \(n^3\) 了。还记得吗，我们其实主要是要解一堆拥有相同系数矩阵的方程组。这意味着在算完第一个方程之后，后面所有的方程都是 \(n^2\) 了。这事实上也不能不说是一个很大的优化。</p></blockquote>
+<blockquote class="alert note" data-kind="笔记"><p>不过这似乎并没有想象中的从 \(n^3\) 到 \(n^2\) 的大优化，因为我们还没有说明我们是怎么得到这个 LU 分解的。正如我们后面要看到的，其实得到 LU 分解我们照样要进行一个 REF，这依然刚需一个 \(n^3\) 的复杂度。只不过也就到 \(n^3\) 了。还记得吗，我们其实主要是要解一堆拥有相同系数矩阵的方程组。这意味着在算完第一个方程之后，后面所有的方程都是 \(n^2\) 了。这事实上也不能不说是一个很大的优化。</p></blockquote>
 <hr>
 <h3 id="计算-lu-分解的算法">计算 LU 分解的算法<a class="anchor" href="#计算-lu-分解的算法">#</a></h3>
 <p>先假设 A 可以被只用 <em>row replacement</em> 简化到 <em>REF</em>，而且甚至我们对这个 <em>row replacement</em> 也有要求：它只能是原来的行加上一个在它之下的行的倍数。这样的话，就存在下三角矩阵\(E_{1},E_{2},\cdots E_{p}\)满足</p>
@@ -54,7 +54,7 @@ L &amp; =(E_{p}\cdots E_{1})^{-1}
 <p>我们可以证明：单位下三角矩阵的乘积仍是单位下三角矩阵。于是 L 即为所求。<br>注意到行变换在把 A 变成 U 的同时把 L 变成了 I，于是我们就可以构造出 L 了：</p>
 <p><img src="../images/p0160-224_544_572_624.png" alt="课本 p.160"></p>
 <p>这个第一步并不总是能做到的。但一旦能做到，我们就知道 LU 分解是存在的。第二步看起来很困难。但事实上我们有一个比较关键的 Notice 在这里：</p>
-<blockquote class="alert important"><p>The row operations that create zeros in the first column of A should also create zeros in the first column of L</p></blockquote>
+<blockquote class="alert important" data-kind="重要"><p>The row operations that create zeros in the first column of A should also create zeros in the first column of L</p></blockquote>
 <p>这样就比较好说了。一个具体的方法可以看这个 example：</p>
 <p><img src="../images/2.5-example.png" alt=""></p>
 <p>当然，在实际的计算中，我们总是免不了要交换的，因为我们要做 <em>partial pivoting</em> 来获得更高的精确度。这件事情也是第一章里说过的。仍然引用一下：</p>
@@ -67,6 +67,6 @@ L &amp; =(E_{p}\cdots E_{1})^{-1}
 </main>
 </div>
 <button id="top" title="回到顶部" aria-label="回到顶部">↑</button>
-<script src="../app.js?v=1792251045"></script>
+<script src="../app.js?v=1792251181"></script>
 </body>
 </html>

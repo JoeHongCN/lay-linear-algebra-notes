@@ -14,6 +14,11 @@
   --mark: rgba(176, 48, 48, 0.10);
   --mark-blue: rgba(47, 93, 138, 0.10);
   --mark-em: rgba(75, 91, 171, 0.10);
+  --alert-note: #2f6f9e;
+  --alert-tip: #1f7a63;
+  --alert-important: #6b4fa8;
+  --alert-warning: #9a6b17;
+  --alert-caution: #a83232;
   --paper: rgba(17, 17, 17, 0.026);
   --paper-line: rgba(17, 17, 17, 0.07);
   --wide: 56em;
@@ -48,6 +53,11 @@
     --mark: rgba(255, 154, 143, 0.14);
     --mark-blue: rgba(143, 184, 222, 0.14);
     --mark-em: rgba(159, 176, 255, 0.14);
+    --alert-note: #79b6e0;
+    --alert-tip: #5fc4a8;
+    --alert-important: #b39ce8;
+    --alert-warning: #e0b062;
+    --alert-caution: #f0837a;
     --paper: rgba(217, 217, 217, 0.026);
     --paper-line: rgba(217, 217, 217, 0.07);
   }
@@ -321,6 +331,31 @@ blockquote {
 }
 
 blockquote p { margin: 0; }
+
+/* Obsidian 风格的 callout：> [!NOTE] / [!WARNING] … */
+blockquote.alert {
+  border-left: 3px solid var(--alert);
+  background: color-mix(in srgb, var(--alert) 9%, transparent);
+  border-radius: 0 6px 6px 0;
+  padding: 0.8em 1.1em;
+  color: var(--fg);
+}
+
+blockquote.alert::before {
+  content: attr(data-kind);
+  display: block;
+  margin-bottom: 0.35em;
+  font-size: 0.78em;
+  letter-spacing: 0.1em;
+  color: var(--alert);
+  font-weight: 700;
+}
+
+blockquote.alert.note { --alert: var(--alert-note); }
+blockquote.alert.tip { --alert: var(--alert-tip); }
+blockquote.alert.important { --alert: var(--alert-important); }
+blockquote.alert.warning { --alert: var(--alert-warning); }
+blockquote.alert.caution { --alert: var(--alert-caution); }
 
 code {
   font-family: "Latin Modern Mono", Consolas, "Courier New", monospace;

@@ -41,9 +41,12 @@
     if (top) top.classList.toggle('show', y > 600);
 
     if (heads.length && links.length) {
+      // 用「视口上方四分之一处」当判定线：标题只要越过这条线就算当前小节，
+      // 否则刚跳过去、标题还在屏幕上半部时会误判成上一节。
+      var line = Math.min(260, innerHeight * 0.28);
       var cur = null;
       for (var i = 0; i < heads.length; i++) {
-        if (heads[i].getBoundingClientRect().top <= 140) cur = heads[i].id;
+        if (heads[i].getBoundingClientRect().top <= line) cur = heads[i].id;
       }
       for (var j = 0; j < links.length; j++) {
         links[j].classList.toggle('active', links[j].getAttribute('href') === '#' + cur);
@@ -67,14 +70,23 @@
   update();
 
   // 图片与公式是跳转之后才渲染完的，会把目标标题往下顶，
-  // 所以等页面完全加载后再校正一次锚点位置。
+  // 所以页面加载后分几次校正锚点位置；用户自己滚动过就不再干预。
+  var manualScroll = false;
+  ['wheel', 'touchstart', 'keydown'].forEach(function (ev) {
+    addEventListener(ev, function () { manualScroll = true; }, { passive: true });
+  });
+
   function realign() {
-    if (!location.hash) return;
+    if (manualScroll || !location.hash) return;
     var el = document.getElementById(decodeURIComponent(location.hash.slice(1)));
-    if (el) el.scrollIntoView({ block: 'start' });
+    if (!el) return;
+    var top = el.getBoundingClientRect().top;
+    if (Math.abs(top - 75) > 8) el.scrollIntoView({ block: 'start' });
     update();
   }
-  addEventListener('load', function () { setTimeout(realign, 120); });
+
+  [150, 600, 1400].forEach(function (ms) { setTimeout(realign, ms); });
+  addEventListener('load', function () { setTimeout(realign, 60); });
   if (document.fonts && document.fonts.ready) {
     document.fonts.ready.then(function () { setTimeout(realign, 60); });
   }
