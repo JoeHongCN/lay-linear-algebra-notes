@@ -1,0 +1,9 @@
+# 原书 PDF 有版权，不上传
+*.pdf
+
+# Obsidian 本地配置
+.obsidian/
+
+# 构建中间产物
+node_modules/
+_pdf-render/
