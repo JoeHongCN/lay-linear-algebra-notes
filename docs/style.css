@@ -21,7 +21,7 @@
   --alert-caution: #a83232;
   --paper: rgba(17, 17, 17, 0.026);
   --paper-line: rgba(17, 17, 17, 0.07);
-  --wide: 56em;
+  --wide: 60em;
 }
 
 :root[data-theme="dark"] {
@@ -185,6 +185,8 @@ main {
     grid-template-columns: max-content minmax(0, var(--wide));
     gap: 1.4em;
     align-items: start;
+    justify-content: start;
+    padding-left: 2.5em;
   }
   .toc {
     display: block;
