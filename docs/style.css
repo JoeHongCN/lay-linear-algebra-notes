@@ -13,7 +13,7 @@
   --mark: rgba(176, 48, 48, 0.10);
   --mark-blue: rgba(47, 93, 138, 0.10);
   --mark-em: rgba(75, 91, 171, 0.10);
-  --wide: 40em;
+  --wide: 52em;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -57,7 +57,7 @@ nav a { color: var(--muted); text-decoration: none; }
 nav a:hover { color: var(--link); }
 
 main {
-  max-width: var(--wide);
+  max-width: min(94vw, var(--wide));
   margin: 0 auto;
   padding: 2.5em 1.4em 8em;
   text-align: justify;
