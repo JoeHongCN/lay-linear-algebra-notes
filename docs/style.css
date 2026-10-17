@@ -168,7 +168,7 @@ main {
 .toc a.d3 { padding-left: 1.5em; font-size: 0.95em; }
 
 @media (min-width: 1280px) {
-  .layout {
+  .layout.has-toc {
     grid-template-columns: 15em minmax(0, var(--wide));
     align-items: start;
   }
