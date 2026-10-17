@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Chapter 01 Summary</title>
+<link rel="stylesheet" href="../style.css">
+<script>
+MathJax = {
+  tex: { inlineMath: [['\\(', '\\)']], displayMath: [['\\[', '\\]']],
+          processEscapes: true },
+  options: { skipHtmlTags: ['script','noscript','style','textarea','pre','code'] }
+};
+</script>
+<script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+<nav><a href="../index.html">← 线性代数笔记</a></nav>
+<main>
+<h1 id="chapter-01-summary">Chapter 01 Summary</h1>
+<p>在这一章中，我们学到了很多有关 <strong>线性系统</strong> 的知识。<br>我们学到了下面这些定理：</p>
+<h1 id="定理">定理</h1>
+<h4 id="theorem-1">Theorem 1</h4>
+<p><img src="../../images/p0039-104_213_526_261.png" alt="课本 p.39"></p>
+<p>REF 的 <em>唯一性定理</em>，证明好像没有想象中的简单。用到了一些后面的思想，到时候再补吧</p>
+<h4 id="theorem-2">Theorem 2</h4>
+<p><img src="../../images/p0047-103_556_529_700.png" alt="课本 p.47"></p>
+<p><em>存在性和唯一性定理</em>，告诉我们怎么判断一个线性系统是 <strong>consistent</strong> 的还是 <strong>inconsistent</strong> 的，以及解是 <strong>无穷多组</strong> 还是 <strong>唯一的</strong>。<br><strong>consistent</strong> 的判定依赖于 <em>pivot column</em> 的判定，也就是增广矩阵的最右一列不是 <em>pivot column</em>。<br>而 <em>pivot column</em> 是一个基于 REF 的概念。<br>如果线性系统有解，那么解的个数取决于有无 <em>自由变量</em>。有自由变量就有无穷多组解，无自由变量就只有一组解。<br><em>自由变量</em> 同样是一个基于 REF 的概念。</p>
+<h4 id="theorem-3">Theorem 3</h4>
+<p><img src="../../images/p0063-106_184_527_335.png" alt="课本 p.63"></p>
+<p>指出的是 <em>矩阵方程</em>、 <em>矢量方程</em>、 <em>增广矩阵</em> 在什么时候等价（或者也可以认为是在说三者的 <em>等价性</em> ）</p>
+<h4 id="theorem-4">Theorem 4</h4>
+<p><img src="../../images/p0064-148_80_573_182.png" alt="课本 p.64"></p>
+<p>指出了下面四个关于\(m\times n\)矩阵\(A\)的说法等价：</p>
+<ul><li>对于每一个在 \(ℝ^{m}\) 上的 \(\mathbf{b}\)，矩阵方程\(A\mathbf{x}=\mathbf{b}\)有解</li><li>每一个在 \(ℝ^{m}\) 上的 \(\mathbf{b}\) 都是矩阵\(A\)的列的线性组合</li><li>\(A\)的列张成空间\(ℝ^m\)</li><li>\(A\)在每一行都有一个 <em>pivot position</em></li></ul>
+<h4 id="theorem-5">Theorem 5</h4>
+<p><img src="../../images/p0066-150_361_573_433.png" alt="课本 p.66"></p>
+<p>讲的是矩阵和向量运算中的 <strong>分配律</strong> 和 <strong>结合律</strong></p>
+<h4 id="theorem-6">Theorem 6</h4>
+<p><img src="../../images/p0074-149_637_570_695.png" alt="课本 p.74"></p>
+<p>讲的是矩阵方程 \(A\mathbf{x}=\mathbf{b}\) 的解可以被看做 <em>通解加特解</em>，这个通解指的是令 \(\mathbf{b}=\mathbf{0}\) 给出来的解，特解就是正常的 \(A\mathbf{x}=\mathbf{b}\) 的解。<br>这里也提供了一种 <em>Uniqueness</em> 的判定——存在<em>非平凡通解</em>等价于线性系统有非唯一解。</p>
+<h4 id="theorem-7">Theorem 7</h4>
+<p><img src="../../images/p0087-104_195_526_278.png" alt="Theorem7"></p>
+<p>有关 <strong>线性相关</strong> 的性质和判定，也就是 <em>至少一个</em> 向量可被其它向量表示 <strong>等价于</strong> 线性相关</p>
+<h4 id="theorem-8">Theorem 8</h4>
+<p><img src="../../images/p0088-149_327_571_381.png" alt="Theorem8"></p>
+<p>向量数大于元素数的向量集线性相关。</p>
+<h4 id="theorem-9">Theorem 9</h4>
+<p><img src="../../images/p0088-144_81_572_126.png" alt="Theorem9"></p>
+<p>存在 <em>零向量</em> 的向量集线性相关。</p>
+<h4 id="theorem-10">Theorem 10</h4>
+<p><img src="../../images/p0101-99_502_528_608.png" alt="Theorem 10"></p>
+<p>这个是说明每一个线性变换都可以用一个矩阵表示。同时这个矩阵的第 \(j\) 列事实上就是 \(T(\mathbf{e}_{j})\)。</p>
+<h4 id="theorem-11">Theorem 11</h4>
+<p><img src="../../images/p0106-144_437_571_477.png" alt="课本 p.106"></p>
+<p>这是说单射等价于 \(T(\mathbf{x}) = \mathbf{0}\) 只有平凡解。</p>
+<h4 id="theorem-12">Theorem 12</h4>
+<p><img src="../../images/p0106-140_150_571_221.png" alt="课本 p.106"></p>
+<p>这是说满射等价于 \(A\) 的列张开 \(ℝ^m\)，单射等价于 \(A\) 的各列线性无关。</p>
+<hr>
+<h1 id="基本方法">基本方法</h1>
+<h4 id="求线性方程组的解">求线性方程组的解。</h4>
+<ul><li>写出增广矩阵( <em>augmented matrix</em> )</li><li>对这个矩阵做基本行变换，把它化简为 <strong>(R)REF</strong></li><li>依据 <strong>RREF</strong> 给出最后方程的解。</li></ul>
+<h4 id="判断是否线性相关">判断是否线性相关</h4>
+<ul><li>写出增广矩阵\(\begin{bmatrix}\mathbf{a}_{1}&\mathbf{a}_{2}&\cdots&\mathbf{a}_{n}&\mathbf{0}\end{bmatrix}\)</li><li>不含非平凡解则线性无关</li><li>含非平凡解则线性相关</li></ul>
+<h4 id="写出参数形式的解">写出参数形式的解</h4>
+<p>1、行简化增广矩阵至行最简阶梯形<br>2、用自由变量表示每一个基本变量<br>3、把 \(\vec{x}\) 中的每一项用自由变量表示<br>4、以自由变量为参数将\(\vec{x}\)分解为线性组合<br><a href="1.5%20Solution%20Sets%20of%20Linear%20Systems.html#solutions-of-nonhomogeneous-systems非齐次线性方程的解">原文</a></p>
+<hr>
+<h1 id="一些等价的说法">一些等价的说法</h1>
+<h4 id="01">01</h4>
+<p>一个线性系统有解 = 增广矩阵的最右列不是 <em>pivot column</em> = 增广矩阵的 <em>echelon form</em> 没有行是这个形式：\(\begin{bmatrix}0&\cdots&0&b\end{bmatrix}\)，其中 \(b\) 非 0。</p>
+<h4 id="02">02</h4>
+<p>一个线性系统有唯一解 = （有解）且无自由变量</p>
+<h4 id="03">03</h4>
+<p>一个线性系统有无穷多解 = （有解）且有至少一个自由变量</p>
+<h4 id="04">04</h4>
+<p>矩阵方程 \(A\mathbf{x} = \mathbf{b}\)  = 矢量方程 \(\sum_{i=1}^{n}\mathbf{a}_{i}x_{i} = \mathbf{b}\)  =  增广矩阵\(\begin{bmatrix}\mathbf{a}_{1}&\mathbf{a}_{2}&\cdots&\mathbf{a}_{n}&\mathbf{b}\end{bmatrix}\)<br>我们已经会求解的是增广矩阵。所以其它两个形式也可以用增广矩阵来看，进行求解。</p>
+<h4 id="05">05</h4>
+<p> 对于每一个在 \(ℝ^{m}\) 上的 \(\mathbf{b}\)，矩阵方程 \(A\mathbf{x}=\mathbf{b}\) 有解 = 每一个在 \(ℝ^{m}\) 上的 \(\mathbf{b}\) 都是矩阵 \(A\) 的列的线性组合 = \(A\) 的列张成空间 \(ℝ^m\) = \(A\) 在每一行都有一个 <em>pivot position</em>.</p>
+<h4 id="06">06</h4>
+<p>\(A\mathbf{x} = \mathbf{b}\) 有解 = \(\mathbf{b}\) 是 \(A\) 的列的线性组合 = \(\mathbf{b}\) 在 Span{\(\mathbf{a_{1}},\mathbf{a_{2}},\cdots,\mathbf{a_{n}}\)}</p>
+<h4 id="07">07</h4>
+<p>\(A\mathbf{x} = \mathbf{0}\) 有非平凡解 = 方程含有至少一个自由变量 <strong>等价于</strong> \(A\) 的各列线性相关。<br>这可以看成是等价 <a href="Chapter%2001%20Summary.html#03">03</a> 的一个特例。</p>
+<h4 id="08">08</h4>
+<p><em>至少一个</em> 向量可被其它向量表示 <strong>等价于</strong> 线性相关<br>当然这个事情更好的操作方式是像 <a href="Chapter%2001%20Summary.html#判断是否线性相关">Chapter 01 Summary#判断是否线性相关</a> 一样做，因为你一般挺难看出哪个向量可以被其它向量表示的。</p>
+<h4 id="09">09</h4>
+<p>单射 <strong>等价于</strong> \(T(\mathbf{x}) = \mathbf{0}\) 只有平凡解 <strong>等价于</strong> \(A(\mathbf{x}) = 0\) 不含有自由变量<strong>等价于</strong>\(A\) 的各列线性无关。</p>
+<h4 id="10">10</h4>
+<p>满射<strong>等价于</strong> \(A\) 的列张开 \(ℝ^m\)<strong>等价于</strong>对于每一个在 \(ℝ^{m}\) 上的 \(\mathbf{b}\)，矩阵方程 \(A\mathbf{x}=\mathbf{b}\) 有解<strong>等价于</strong>每一个在 \(ℝ^{m}\) 上的 \(\mathbf{b}\) 都是矩阵 \(A\) 的列的线性组合 <strong>等价于</strong> \(A\) 在每一行都有一个 <em>pivot position</em>.<a href="Chapter%2001%20Summary.html#05">Chapter 01 Summary#05</a></p>
+<hr>
+<h1 id="单箭头">单箭头</h1>
+<h4 id="向量个数大于向量元素推出线性相关">向量个数大于向量元素推出线性相关</h4>
+<h4 id="含零向量线性相关">含零向量，线性相关</h4>
+</main>
+</body>
+</html>

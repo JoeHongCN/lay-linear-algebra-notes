@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>2.1 T34补充</title>
+<link rel="stylesheet" href="style.css">
+<script>
+MathJax = {
+  tex: { inlineMath: [['\\(', '\\)']], displayMath: [['\\[', '\\]']],
+          processEscapes: true },
+  options: { skipHtmlTags: ['script','noscript','style','textarea','pre','code'] }
+};
+</script>
+<script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+<nav><a href="index.html">← 线性代数笔记</a></nav>
+<main>
+<h1 id="21-t34补充">2.1 T34补充</h1>
+<h2 id="目录">目录</h2>
+<ul><li><a href="#方法一选三个线性无关的列构造分块右逆">方法一：选三个线性无关的列，构造分块右逆</a></li><li><a href="#方法二利用-aat-可逆取-dataat-1">方法二：利用 <code>AA^T</code> 可逆，取 <code>D=A^T(AA^T)^{-1}</code></a></li><li><a href="#方法三通过-qr-分解构造">方法三：通过 QR 分解构造</a></li><li>[方法四：用行变换把 <code>A</code> 化为 <code>[I3\mid 0]</code>](#方法四用行变换把-a-化为-i3mid-0)</li><li><a href="#这些方法之间的关系">这些方法之间的关系</a></li></ul>
+<h2 id="方法一选三个线性无关的列构造分块右逆">方法一：选三个线性无关的列，构造分块右逆</h2>
+<p>因为 \(A\) 的列张成 \(ℝ^3\)，所以 \(A\) 的 \(n\) 列中一定可以选出 \(3\) 个线性无关的列。假设第 \(i,j,k\) 列线性无关，令</p>
+<div class="math">\[B=\begin{bmatrix}\mathbf{a}_i&amp;\mathbf{a}_j&amp;\mathbf{a}_k\end{bmatrix}\]</div>
+<p>则 \(B\) 是 \(3\times 3\) 可逆矩阵。把 \(D\) 构造成一个 \(n\times 3\) 矩阵，只保留对应第 \(i,j,k\) 行的位置，其余行全为 \(0\)：</p>
+<div class="math">\[D=
+\begin{bmatrix}
+0&amp;\cdots&amp;0\\
+\vdots&amp;&amp;\vdots\\
+B^{-1}&amp;\text{放在第 }i,j,k\text{ 行}\\
+\vdots&amp;&amp;\vdots\\
+0&amp;\cdots&amp;0
+\end{bmatrix}\]</div>
+<p>更具体地说，如果 \(D\) 的第 \(i,j,k\) 行拼成 \(B^{-1}\)，其他行全是零行，那么</p>
+<div class="math">\[AD = A D = B B^{-1} = I_3\]</div>
+<p>这个方法的优点是：只需要求一个 \(3\times 3\) 矩阵的逆，计算量小，而且直接利用了“列张成 \(ℝ^3\)”这一条件。</p>
+<h2 id="方法二利用-aat-可逆取-dataat-1">方法二：利用 \(AA^T\) 可逆，取 \(D=A^T(AA^T)^{-1}\)</h2>
+<p>因为 \(A\) 是 \(3\times n\) 且行满秩，所以 \(AA^T\) 是 \(3\times 3\) 的对称正定矩阵，因而可逆。于是可以令</p>
+<div class="math">\[D=A^T(AA^T)^{-1}\]</div>
+<p>验证：</p>
+<div class="math">\[AD=A A^T(AA^T)^{-1}=I_3\]</div>
+<p>所以 \(D\) 就是一个右逆。这个方法不需要解三个方程组，也不需要选列，直接做矩阵乘法即可。它其实就是 Moore-Penrose 伪逆在行满秩情形下的右逆形式。</p>
+<h2 id="方法三通过-qr-分解构造">方法三：通过 QR 分解构造</h2>
+<p>对 \(A^T\) 做 QR 分解。因为 \(A^T\) 是 \(n\times 3\) 且列满秩，所以</p>
+<div class="math">\[A^T=Q R\]</div>
+<p>其中 \(Q\) 是 \(n\times 3\) 矩阵，列向量正交单位，\(R\) 是 \(3\times 3\) 上三角可逆矩阵。于是</p>
+<div class="math">\[A=R^T Q^T\]</div>
+<p>取</p>
+<div class="math">\[D=Q R^{-T}\]</div>
+<p>则</p>
+<div class="math">\[AD=R^T Q^T Q R^{-T}=R^T I_3 R^{-T}=I_3\]</div>
+<p>所以 \(D=Q R^{-T}\) 是一个右逆。这个方法在数值计算中比较稳定。</p>
+<h2 id="方法四用行变换把-a-化为-i3mid-0">方法四：用行变换把 \(A\) 化为 \([I_3\mid 0]\)</h2>
+<p>因为 \(A\) 行满秩，所以存在可逆的 \(3\times 3\) 矩阵 \(P\)，使得</p>
+<div class="math">\[P A = \begin{bmatrix}I_3 &amp; 0\end{bmatrix}\]</div>
+<p>其中 \(0\) 是 \(3\times (n-3)\) 的零矩阵。于是</p>
+<div class="math">\[A=P^{-1}\begin{bmatrix}I_3\\0\end{bmatrix}\]</div>
+<p>这里 \(\begin{bmatrix}I_3\\0\end{bmatrix}\) 是 \(n\times 3\) 矩阵。令</p>
+<div class="math">\[D=\begin{bmatrix}I_3\\0\end{bmatrix} P\]</div>
+<p>则</p>
+<div class="math">\[AD=P^{-1}\begin{bmatrix}I_3&amp;0\end{bmatrix}\begin{bmatrix}I_3\\0\end{bmatrix}P
+=P^{-1}I_3 P=I_3\]</div>
+<p>所以 \(D\) 也是一个右逆。这个方法本质上就是通过行化简找到 \(A\) 的行空间的一组基。</p>
+<h2 id="这些方法之间的关系">这些方法之间的关系</h2>
+<ul><li>你的方法（解 \(A\mathbf{x}=\mathbf{e}_i\)）是最直接的，等价于逐列求右逆。</li><li>方法一本质上是“选主元列”，然后用分块矩阵求逆。</li><li>方法二和方法三都利用了 \(A\) 行满秩的性质，分别通过 Gram 矩阵和 QR 分解来构造右逆。</li><li>方法四则是从行变换的角度出发。</li></ul>
+<p>它们给出的 \(D\) 可能不同，因为右逆一般不唯一（当 \(n>3\) 时，\(A\) 有无穷多个右逆）。但只要满足 \(AD=I_3\)，就都是合法的构造。</p>
+<p>所以，除了你提到的方法，至少还有“选主元列分块求逆”、“\(A^T(AA^T)^{-1}\)”、“QR 分解”、“行变换法”等思路。你可以根据具体问题选择最方便的一种。</p>
+</main>
+</body>
+</html>
