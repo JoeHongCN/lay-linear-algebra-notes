@@ -182,11 +182,13 @@ main {
 
 @media (min-width: 1280px) {
   .layout.has-toc {
-    grid-template-columns: 11.5em minmax(0, var(--wide));
+    grid-template-columns: max-content minmax(0, var(--wide));
+    gap: 1.4em;
     align-items: start;
   }
   .toc {
     display: block;
+    max-width: 11em;
     position: sticky;
     top: 4.2em;
     max-height: calc(100vh - 6em);
